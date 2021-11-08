@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var mail = ""
+    @State private var password = ""
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            FormField(value: $mail, icon: "envelope.fill", placeholder: "이메일")
+            FormField(value: $password, icon: "lock.fill", placeholder: "비밀번호", isSecure: true)
+
+        }
     }
 }
 

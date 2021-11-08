@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>496270234238-vdjsdefq37bgot139cm3kajm6eaq7ef7.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.496270234238-vdjsdefq37bgot139cm3kajm6eaq7ef7</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD1qybS7f1oP72tC96tUkMiBIMXxBaC3XE</string>
+	<key>GCM_SENDER_ID</key>
+	<string>496270234238</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>haju.project.MyTravel</string>
+	<key>PROJECT_ID</key>
+	<string>mytravelapp-fa2ef</string>
+	<key>STORAGE_BUCKET</key>
+	<string>mytravelapp-fa2ef.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:496270234238:ios:74e066f216e3b0bf87be2f</string>
+</dict>
+</plist>
