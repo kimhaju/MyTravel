@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct RegisterView: View {
+    
+// MARK: - properties
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var country: String = ""
@@ -18,14 +20,57 @@ struct RegisterView: View {
     @State private var showImagePicker = false
     @State private var imageData: Data = Data()
     @State private var sourceType: UIImagePickerController.SourceType = .photoLibrary
+    @State private var error : String = ""
+    @State private var showingAlert = false
+    //->경고 제목
+    @State private var alertTitle: String = "회원가입에 문제가 생겼습니다...😔"
     
+    
+    // MARK: - register func 
     func loadImage() {
         guard let inputImage = pickedImage else { return }
         profileImage = inputImage
     }
     
-    var body: some View {
+    //->회원가입하는데 있어서 에러를 체크 받을 메서드
+    //->사용자가 위와 같은 정보를 제공했는지 확인
+    func errorCheck() -> String? {
+        if email.trimmingCharacters(in: .whitespaces).isEmpty || password.trimmingCharacters(in: .whitespaces).isEmpty || username.trimmingCharacters(in: .whitespaces).isEmpty || country.trimmingCharacters(in: .whitespaces).isEmpty || imageData.isEmpty{
+            
+            return "모든 정보를 입력해주세요!"
+        }
+        return nil
+    }
+    
+    //->요것의 용도: 회원가입이 완료되면 창을 초기화 
+    func clear() {
+        self.email = ""
+        self.username = ""
+        self.password = ""
+        self.country = ""
+    }
+    
+    func registerUp() {
+        if let error = errorCheck(){
+            self.error = error
+            self.showingAlert = true
+            self.clear()
+            return
+        }
         
+        AuthService.signUp(username: username, email: email, password: password, country: country, imageData: imageData, onSuccess: { user in
+            self.clear()
+        }){ errorMessage in
+            print("Error \(errorMessage)")
+            self.error = errorMessage
+            self.showingAlert = true
+            return
+        }
+    }
+    
+    // MARK: - registerView
+    
+    var body: some View {
         ScrollView{
             VStack(spacing: 5) {
                 Group {
@@ -49,13 +94,15 @@ struct RegisterView: View {
                     
                     FormField(value: $password, icon: "lock.fill", placeholder: "비밀번호", isSecure: true)
                     
-                    FormField(value: $country, icon: "network", placeholder: "국가", isSecure: true)
+                    FormField(value: $country, icon: "network", placeholder: "국가")
                     
-                    FormField(value: $username, icon: "person.circle.fill", placeholder: "이름", isSecure: true)
+                    FormField(value: $username, icon: "person.circle.fill", placeholder: "이름")
                 }
                 
-                Button(action: {}){
+                Button(action: {registerUp()}){
                     Text("Register").font(.title).modifier(ButtonModifier())
+                }.alert(isPresented: $showingAlert){
+                    Alert(title: Text(alertTitle), message: Text(error), dismissButton: .default(Text("OK")))
                 }.padding()
                 
             }.sheet(isPresented: $showImagePicker, onDismiss: loadImage) {
@@ -78,6 +125,7 @@ struct RegisterView: View {
     }
 }
 
+// MARK: - register preview
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
         RegisterView()
