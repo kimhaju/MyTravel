@@ -23,6 +23,7 @@
 		9A93C13B2736963E00882FB1 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A93C13A2736963E00882FB1 /* StorageService.swift */; };
 		9AA02A542734CF7700DE7C39 /* ButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA02A532734CF7700DE7C39 /* ButtonModifier.swift */; };
 		9AA02A572734DB7600DE7C39 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA02A562734DB7600DE7C39 /* RegisterView.swift */; };
+		9AA6AC07273A0993003B921F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA6AC06273A0993003B921F /* HomeViewModel.swift */; };
 		CAEF95D874230520A4D67FA3 /* Pods_MyTravel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4169D6F3E82FA9FBE40192 /* Pods_MyTravel.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		9A93C13A2736963E00882FB1 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		9AA02A532734CF7700DE7C39 /* ButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModifier.swift; sourceTree = "<group>"; };
 		9AA02A562734DB7600DE7C39 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		9AA6AC06273A0993003B921F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 			children = (
 				9A4E09732733E69E002BB0B7 /* FormField.swift */,
 				9AA02A532734CF7700DE7C39 /* ButtonModifier.swift */,
+				9AA6AC06273A0993003B921F /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				9A4E097927341994002BB0B7 /* LoginView.swift in Sources */,
 				9A4553DA2735226B003422B7 /* ImagePicker.swift in Sources */,
 				9AA02A572734DB7600DE7C39 /* RegisterView.swift in Sources */,
+				9AA6AC07273A0993003B921F /* HomeViewModel.swift in Sources */,
 				9A93C138273694CF00882FB1 /* AuthService.swift in Sources */,
 				9A4E09632733E4E9002BB0B7 /* MyTravelApp.swift in Sources */,
 				9A93C13B2736963E00882FB1 /* StorageService.swift in Sources */,
