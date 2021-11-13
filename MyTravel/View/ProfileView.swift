@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import Introspect
 
 struct ProfileView: View {
     //->세션 저장소에 있는 유저 가져오기
+    @State var uiTabarController: UITabBarController?
     @EnvironmentObject var userSession: SessionStore
     @State private var selection = 1
     var user: User?
@@ -20,8 +22,12 @@ struct ProfileView: View {
         //->유저 프로파일 이미지
         VStack{
             ProfileSettingViewModel(user: self.userSession.session)
+        }.introspectTabBarController { (UITabBarController) in
+            UITabBarController.tabBar.isHidden = true
+            uiTabarController = UITabBarController
+        }.onDisappear{
+            uiTabarController?.tabBar.isHidden = false
         }
-        
     }
 }
 

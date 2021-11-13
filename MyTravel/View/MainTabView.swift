@@ -6,53 +6,50 @@
 //
 
 import SwiftUI
+import Introspect
 
-    // MARK: - 탭바 셋팅
-    struct MainTabView: View {
-        
-        @State var tab = "home"
-        
-        var body: some View{
-            VStack(spacing: 0){
-                Spacer()
+// MARK: - 탭바 셋팅
+struct MainTabView: View {
+    
+    @State var uiTabarController: UITabBarController?
+    @State private var tabSelection: Tabs = .home
+    
+    var body: some View {
+            TabView(selection: $tabSelection) {
+                HomeView().tabItem {
+                    Image(systemName: "house.fill")
+                    Text("Home")
+                }.tag(Tabs.home)
                 
-                HStack(spacing: 0){
-                    TabButton(title: "house.fill", tab: $tab)
-                    
-                    Spacer(minLength: 0)
-                    
-                    TabButton(title: "calendar.badge.plus", tab: $tab)
-                    
-                    Spacer(minLength: 0)
-                    
-                    TabButton(title: "heart.fill", tab: $tab)
-                    
-                    //->사이즈 조정
-                }.padding(.top).padding(.bottom,UIApplication.shared.windows.first!.safeAreaInsets.bottom == 0 ? 15 :
-                                            UIApplication.shared.windows.first!.safeAreaInsets.bottom )
-                .edgesIgnoringSafeArea(.all)
-                .background(Color.blue).edgesIgnoringSafeArea(.all)
+                MyCalendarView().tabItem {
+                    Image(systemName: "calendar.badge.plus")
+                    Text("MyCalendar")
+                }.tag(Tabs.calendar)
                 
+                MyWishlistView().tabItem {
+                    Image(systemName: "moon.stars")
+                    Text("wishlist")
+                }.tag(Tabs.wishlist)
+                
+            }.onAppear(){
+                UITabBar.appearance().barTintColor = .white
+            }.accentColor(.pink).introspectTabBarController { (UITabBarController) in
+                UITabBarController.tabBar.isHidden = false
+                uiTabarController = UITabBarController
+            }.onDisappear{
+                uiTabarController?.tabBar.isHidden = false
             }
-        }
     }
+}
 
-    // MARK: -TabButton
-    struct TabButton: View {
-        
-        var title: String
-        @Binding var tab: String
-   
-        var body: some View {
-            Button(action: {tab = title}){
-                Image(systemName: title).renderingMode(.original).foregroundColor(tab == title ? .white : .gray).padding(.vertical,10).padding(.horizontal).background(Color.blue.opacity(tab == title ? 1 : 0)).clipShape(Capsule())
-            }
-        }
-    }
-
+//->탭바를 감추기 위한 열거형 준비
+enum Tabs {
+    case home,calendar,wishlist
+}
 
 struct MainTabView_Previews: PreviewProvider {
     static var previews: some View {
        MainTabView()
     }
 }
+

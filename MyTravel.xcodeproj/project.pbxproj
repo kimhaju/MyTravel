@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9A0AD5C2273BB5E7009CC4FA /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0AD5C1273BB5E7009CC4FA /* ProfileView.swift */; };
+		9A295F7C2740003200A2ECED /* ShowTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A295F7B2740003200A2ECED /* ShowTabBar.swift */; };
 		9A311A9727395CBA004B789D /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A311A9627395CBA004B789D /* SessionStore.swift */; };
 		9A311A9F273966F7004B789D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A311A9E273966F7004B789D /* HomeView.swift */; };
 		9A4553DA2735226B003422B7 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4553D92735226B003422B7 /* ImagePicker.swift */; };
@@ -39,6 +40,7 @@
 		3B4169D6F3E82FA9FBE40192 /* Pods_MyTravel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTravel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AEEDE8AEF9EB68463E410D0 /* Pods-MyTravel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTravel.release.xcconfig"; path = "Target Support Files/Pods-MyTravel/Pods-MyTravel.release.xcconfig"; sourceTree = "<group>"; };
 		9A0AD5C1273BB5E7009CC4FA /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		9A295F7B2740003200A2ECED /* ShowTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowTabBar.swift; sourceTree = "<group>"; };
 		9A311A9627395CBA004B789D /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
 		9A311A9E273966F7004B789D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		9A4553D92735226B003422B7 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 			children = (
 				9A4553D92735226B003422B7 /* ImagePicker.swift */,
 				9A93C1332736763300882FB1 /* Extensions.swift */,
+				9A295F7B2740003200A2ECED /* ShowTabBar.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				9A4A7CAF273AB3A500635ABC /* TravelButtonViewModel.swift in Sources */,
 				9A4E09632733E4E9002BB0B7 /* MyTravelApp.swift in Sources */,
 				9A93C13B2736963E00882FB1 /* StorageService.swift in Sources */,
+				9A295F7C2740003200A2ECED /* ShowTabBar.swift in Sources */,
 				9AA02A542734CF7700DE7C39 /* ButtonModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
