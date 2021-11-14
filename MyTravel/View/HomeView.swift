@@ -26,6 +26,7 @@ struct HomeView: View {
 
                             //->검색창
                             Text("원하는 여행지를 검색해보세요.").font(.footnote).padding()
+                            
                             Spacer()
 
                             Divider().frame(height: 24)
