@@ -11,32 +11,34 @@ import Firebase
 struct HomeView: View {
     
     @EnvironmentObject var session: SessionStore
+    @StateObject var homeModel = HomeViewModel()
     
     var body: some View {
-        
-        
         // MARK: - header
         NavigationView {
         ScrollView(.vertical, showsIndicators: false){
         VStack{
             ProfileHeaderViewModel(user: self.session.session)
+            //->검색창
                     HStack {
                         HStack {
                             Image(systemName: "magnifyingglass").foregroundColor(Color(UIColor.systemIndigo)).padding()
 
-                            //->검색창
-                            Text("원하는 여행지를 검색해보세요.").font(.footnote).padding()
+                            TextField("여행지를 검색해보세요!", text: $homeModel.search)
                             
+                            if homeModel.search != ""{
+                                Button(action: {}, label: {
+                                    Image(systemName: "arrowtriangle.down.fill").resizable().frame(width: 10, height: 10).padding()
+                                })
+                            }
                             Spacer()
 
                             Divider().frame(height: 24)
-                            Image(systemName: "arrowtriangle.down.fill").resizable().frame(width: 8, height: 8).padding()
-
                         }.foregroundColor(Color.secondary.opacity(0.5)).background(Color.gray.opacity(0.1)).cornerRadius(80).shadow(radius: 1).padding()
                     }
                     // MARK: - travel button
 
-            TravelButtonViewModel()
+            TravelButtonView()
 
                     // MARK: - trips
             VStack(alignment: .leading){
