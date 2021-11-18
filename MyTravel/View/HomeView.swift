@@ -11,19 +11,19 @@ import Firebase
 struct HomeView: View {
     
     @EnvironmentObject var session: SessionStore
-    @StateObject var homeModel = HomeViewModel()
-    
+//    @StateObject var homeModel = HomeViewModel()
+    @ObservedObject var homeModel = HomeViewModel()
     var body: some View {
         // MARK: - header
         NavigationView {
-        ScrollView(.vertical, showsIndicators: false){
-        VStack{
-            ProfileHeaderViewModel(user: self.session.session)
-            //->검색창
+            ScrollView(.vertical, showsIndicators: false){
+                VStack{
+                    ProfileHeaderViewModel(user: self.session.session)
+                    //->검색창
                     HStack {
                         HStack {
                             Image(systemName: "magnifyingglass").foregroundColor(Color(UIColor.systemIndigo)).padding()
-
+                            
                             TextField("여행지를 검색해보세요!", text: $homeModel.search)
                             
                             if homeModel.search != ""{
@@ -32,39 +32,19 @@ struct HomeView: View {
                                 })
                             }
                             Spacer()
-
+                            
                             Divider().frame(height: 24)
                         }.foregroundColor(Color.secondary.opacity(0.5)).background(Color.gray.opacity(0.1)).cornerRadius(80).shadow(radius: 1).padding()
                     }
                     // MARK: - travel button
-
-            TravelButtonView()
-
+                    
+                    TravelButtonView()
+                    
                     // MARK: - trips
-            VStack(alignment: .leading){
-                HStack {
-                            Text("tema").font(.largeTitle)
-                            Text("trips").font(.title).fontWeight(.heavy)
-                    Spacer()
-                        }.padding(.vertical)
-
-                        HStack(spacing:60){
-                            Text("futured").bold()
-                            Text("past").foregroundColor(.secondary)
-                            Text("all").foregroundColor(.secondary)
-                        }.padding(.vertical)
-
-                        ScrollView (.horizontal, showsIndicators: false){
-                            HStack(spacing: 20){
-                                NavigationLink(
-                                    destination: DetailTravelPageViewModel()){
-                                Image("water").resizable().aspectRatio(contentMode: .fill).frame(width: 200, height: 270).cornerRadius(12)
-                                }.buttonStyle(PlainButtonStyle())
-                                Image("nature").resizable().aspectRatio(contentMode: .fill).frame(width: 200, height: 270).cornerRadius(12)
-
-                            }
-                        }.padding(.trailing,-20)
-                    }.padding().foregroundColor(Color(UIColor.systemIndigo)).edgesIgnoringSafeArea(.bottom)
+                    PackageView()
+                    
+                    Text("check")
+                    
                 }
             }
         }
@@ -76,7 +56,7 @@ struct HomeView: View {
 struct Curves: Shape {
     var corner: UIRectCorner
     var radius: CGFloat
-
+    
     func path(in rect: CGRect) -> Path {
         let path = UIBezierPath (roundedRect: rect, byRoundingCorners: corner, cornerRadii: CGSize(width: radius, height: radius))
         return Path(path.cgPath)

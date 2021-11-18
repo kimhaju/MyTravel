@@ -10,6 +10,7 @@ import Introspect
 
 // MARK: - 탭바 셋팅
 struct MainTabView: View {
+    @StateObject var wishList = MyWishlistViewModel()
     
     @State var uiTabarController: UITabBarController?
     @State private var tabSelection: Tabs = .home
@@ -26,9 +27,9 @@ struct MainTabView: View {
                     Text("MyCalendar")
                 }.tag(Tabs.calendar)
                 
-                MyWishlistView().tabItem {
+                MyWishlistView(listData: wishList).tabItem {
                     Image(systemName: "moon.stars")
-                    Text("wishlist")
+                    Text("wishlist").offset(x:wishList.showlist ? 0 : -UIScreen.main.bounds.width / 1.6)
                 }.tag(Tabs.wishlist)
                 
             }.onAppear(){
