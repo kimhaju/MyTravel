@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct PackageView: View {
+    
     @StateObject var homeModel = HomeViewModel()
+    
     var body: some View {
         VStack(alignment: .leading){
             HStack {
@@ -18,8 +20,8 @@ struct PackageView: View {
                     }.padding(.vertical)
 
                     HStack(spacing:60){
-                        Text("futured").bold()
-                        Text("past").foregroundColor(.secondary)
+                        Text("season").bold()
+                        Text("feeling").foregroundColor(.secondary)
                         Text("all").foregroundColor(.secondary)
                     }.padding(.vertical)
 
@@ -27,9 +29,11 @@ struct PackageView: View {
                         HStack(spacing: 20){
                             NavigationLink(
                                 destination: TravelScrollView()){
-                            Image("water").resizable().aspectRatio(contentMode: .fill).frame(width: 200, height: 270).cornerRadius(12)
+                            Image("spring").resizable().aspectRatio(contentMode: .fill).frame(width: 200, height: 270).cornerRadius(12)
                             }.buttonStyle(PlainButtonStyle())
-                            Image("nature").resizable().aspectRatio(contentMode: .fill).frame(width: 200, height: 270).cornerRadius(12)
+                            Image("summer").resizable().aspectRatio(contentMode: .fill).frame(width: 200, height: 270).cornerRadius(12)
+                            Image("fall").resizable().aspectRatio(contentMode: .fill).frame(width: 200, height: 270).cornerRadius(12)
+                            Image("winter").resizable().aspectRatio(contentMode: .fill).frame(width: 200, height: 270).cornerRadius(12)
                         }
                     }.padding(.trailing,-20)
             

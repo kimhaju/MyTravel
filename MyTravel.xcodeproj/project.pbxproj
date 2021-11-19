@@ -19,7 +19,7 @@
 		9A4553DE27354571003422B7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A4553DD27354571003422B7 /* GoogleService-Info.plist */; };
 		9A4553FB27356BD7003422B7 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4553FA27356BD7003422B7 /* UserModel.swift */; };
 		9A4A7CAF273AB3A500635ABC /* TravelButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4A7CAE273AB3A500635ABC /* TravelButtonView.swift */; };
-		9A4A7CB2273AB42400635ABC /* DetailTravelPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4A7CB1273AB42400635ABC /* DetailTravelPageViewModel.swift */; };
+		9A4A7CB2273AB42400635ABC /* DetailTravelPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4A7CB1273AB42400635ABC /* DetailTravelPageView.swift */; };
 		9A4E09632733E4E9002BB0B7 /* MyTravelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4E09622733E4E9002BB0B7 /* MyTravelApp.swift */; };
 		9A4E09652733E4E9002BB0B7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4E09642733E4E9002BB0B7 /* ContentView.swift */; };
 		9A4E09672733E4ED002BB0B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A4E09662733E4ED002BB0B7 /* Assets.xcassets */; };
@@ -59,7 +59,7 @@
 		9A4553DD27354571003422B7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9A4553FA27356BD7003422B7 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		9A4A7CAE273AB3A500635ABC /* TravelButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelButtonView.swift; sourceTree = "<group>"; };
-		9A4A7CB1273AB42400635ABC /* DetailTravelPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTravelPageViewModel.swift; sourceTree = "<group>"; };
+		9A4A7CB1273AB42400635ABC /* DetailTravelPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTravelPageView.swift; sourceTree = "<group>"; };
 		9A4E095F2733E4E9002BB0B7 /* MyTravel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTravel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A4E09622733E4E9002BB0B7 /* MyTravelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTravelApp.swift; sourceTree = "<group>"; };
 		9A4E09642733E4E9002BB0B7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -166,7 +166,6 @@
 			children = (
 				9A3FEC742741F772008A63F1 /* HomeViewModel.swift */,
 				9AE20CC2273AAA9A0043B760 /* ProfileHeaderViewModel.swift */,
-				9A4A7CB1273AB42400635ABC /* DetailTravelPageViewModel.swift */,
 				9AE7AF93273D61D0009DA31F /* ProfileSettingViewModel.swift */,
 				9A3FEC7B2742138C008A63F1 /* TravelButtonViewModel.swift */,
 				9A3FEC862742939E008A63F1 /* LocationViewModel.swift */,
@@ -185,6 +184,7 @@
 				9A4A7CAE273AB3A500635ABC /* TravelButtonView.swift */,
 				9A3FEC832742677B008A63F1 /* MoreView.swift */,
 				9A6525832743C08D00EA959B /* TravelScrollView.swift */,
+				9A4A7CB1273AB42400635ABC /* DetailTravelPageView.swift */,
 				9AFC631A2744FD8F00DA003F /* PackageView.swift */,
 			);
 			path = View;
@@ -350,7 +350,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A4A7CB2273AB42400635ABC /* DetailTravelPageViewModel.swift in Sources */,
+				9A4A7CB2273AB42400635ABC /* DetailTravelPageView.swift in Sources */,
 				9A4E09742733E69E002BB0B7 /* FormField.swift in Sources */,
 				9A93C1342736763300882FB1 /* Extensions.swift in Sources */,
 				9A311A9F273966F7004B789D /* HomeView.swift in Sources */,

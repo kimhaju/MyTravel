@@ -9,7 +9,7 @@ import Foundation
 import Firebase
 
 class AuthService {
-    
+  
     // MARK: - firestore 저장
     
     static var storeRoot = Firestore.firestore()
