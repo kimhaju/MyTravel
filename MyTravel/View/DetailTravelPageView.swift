@@ -10,53 +10,29 @@ import SDWebImageSwiftUI
 import Firebase
 
 struct DetailTravelPageView: View {
-    
-    @Binding var selection: Int
     @ObservedObject var homeModel : HomeViewModel
+    @Binding var selection: Int
+    @State var index = 1
+    var animation : Namespace.ID
     
     var body: some View {
         let item = homeModel.travelItems
+        
         VStack{
-            VStack{
+            VStack {
                 ZStack(alignment: Alignment(horizontal: .center, vertical: .top)){
-                    WebImage(url: URL(string: item[selection].item_image))
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 415,height: 330)
-                        .clipShape(RoundedShape(corners: [.bottomLeft,.bottomRight]))
+                    WebImage(url: URL(string: item[selection].item_image)).resizable().aspectRatio(contentMode: .fill).frame(height: 330).matchedGeometryEffect(id: item[selection].item_image, in: animation)
                     
                     HStack {
-                       
-                        Image(systemName: "chevron.left")
-                            .foregroundColor(.black)
-                            .padding()
-                            .background(Color.white)
-                            .clipShape(Circle())
-                       
+                        Button(action: {}){
+                            Image(systemName: "suit.heart")
+                                .foregroundColor(.black)
+                                .padding()
+                                .background(Color.white)
+                                .clipShape(Circle())
+                            
+                        }
                     }
-                    
-                    Spacer()
-                    
-                    Button(action: {}) {
-                        
-                        Image(systemName: "suit.heart")
-                            .foregroundColor(.black)
-                            .padding()
-                            .background(Color.white)
-                            .clipShape(Circle())
-                    }
-                }.padding()
-                // since all edges are ignored....
-                .padding(.top,UIApplication.shared.windows.first?.safeAreaInsets.top)
-            }
-            
-            HStack(alignment: .top){
-                
-                VStack(alignment: .leading, spacing: 12) {
-                    Text(item[selection].item_name)
-                        .font(.title)
-                        .foregroundColor(Color.pink)
-                        .fontWeight(.bold)
                     
                 }
             }
@@ -64,9 +40,8 @@ struct DetailTravelPageView: View {
     }
 }
 
+
 struct RoundedShape : Shape {
-    
-    // for resuable.....
     var corners : UIRectCorner
     
     func path(in rect: CGRect) -> Path {
@@ -77,66 +52,120 @@ struct RoundedShape : Shape {
     }
 }
 
+struct BottomView: View {
+     @State var index = 1
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 15){
+            
+            Text("인원")
+                .font(.title)
+                .fontWeight(.bold)
+                .foregroundColor(Color("txt"))
+            
+            Text("여행 갈 사람들")
+                .font(.caption)
+            
+        }
+    }
+}
 
-//struct DetailTravelPageView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        DetailTravelPageView(item: )
+//VStack{
+//    VStack{
+//        ZStack(alignment: Alignment(horizontal: .center, vertical: .top)){
+//            WebImage(url: URL(string: item[selection].item_image))
+//                .resizable()
+//                .aspectRatio(contentMode: .fill)
+//                .frame(height: 330)
+//                .clipShape(RoundedShape(corners: [.bottomLeft,.bottomRight]))
+//
+//            HStack {
+//
+//                Image(systemName: "chevron.left")
+//                    .foregroundColor(.black)
+//                    .padding()
+//                    .background(Color.white)
+//                    .clipShape(Circle())
+//
+//            }
+//
+//            Spacer()
+//
+//            Button(action: {}) {
+//
+//                Image(systemName: "suit.heart")
+//                    .foregroundColor(.black)
+//                    .padding()
+//                    .background(Color.white)
+//                    .clipShape(Circle())
+//            }
+//        }.padding()
+//        // since all edges are ignored....
+//        .padding(.top,UIApplication.shared.windows.first?.safeAreaInsets.top)
+//    }
+//
+//    HStack(alignment: .top){
+//
+//        VStack(alignment: .leading, spacing: 12) {
+//            Text(item[selection].item_name)
+//                .font(.title)
+//                .foregroundColor(Color.pink)
+//                .fontWeight(.bold)
+//
+//            HStack(spacing: 10){
+//                Image("locate")
+//
+//                Text(item[selection].item_address)
+//                    .foregroundColor(.black)
+//
+//                HStack(spacing: 5){
+//
+//                    ForEach(1...5, id: \.self){ index in
+//                        Image(systemName: "star.fill")
+//                            .foregroundColor(index <= Int(item[selection].item_ratings) ?? 0 ? Color.pink : .gray)
+//                    }
+//                }
+//            }
+//            Spacer(minLength: 0)
+//
+//            Text(item[selection].item_price)
+//                .font(.title)
+//                .fontWeight(.bold)
+//                .foregroundColor(Color.pink)
+//        }.padding()
+//        .padding(.bottom)
+//    }
+//    .background(Color.white)
+//    .clipShape(RoundedShape(corners: [.bottomLeft,.bottomRight]))
+//
+//       VStack(alignment: .leading, spacing: 15){
+//
+//           Text("인원")
+//               .font(.title)
+//               .fontWeight(.bold)
+//               .foregroundColor(Color("txt"))
+//
+//           Text("여행 갈 사람들")
+//               .font(.caption)
+//
+//        HStack(spacing: 15) {
+//
+//            ForEach(1...6, id: \.self){ i in
+//
+//                Button(action: {index = i}){
+//
+//                    Text("\(i)")
+//                        .fontWeight(.bold)
+//                        .foregroundColor(index == i ? .gray : .pink)
+//                        .padding(.vertical,10)
+//                        .padding(.horizontal)
+//                        .background(Color("Color").opacity(index == i ? 1 : 0.07))
+//                        .cornerRadius(4)
+//                }
+//            }
+//            Spacer(minLength: 0)
+//        }
+//        padding(.top)
+//
 //    }
 //}
-
-//    Image("water").resizable().aspectRatio(contentMode: .fill).frame(width: 350,height: 450)
-//}.clipShape(Curves(corner: .bottomLeft, radius: 35)).clipShape(Curves(corner: .bottomRight, radius: 35)).shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 20)
-//
-//VStack(alignment: .leading, spacing: 8){
-//    HStack {
-//        Text("waterfall").font(.largeTitle).fontWeight(.heavy)
-//        Text("jeju").font(.largeTitle).fontWeight(.ultraLight).foregroundColor(.secondary)
-//    }
-//    //->별점 페이지
-//    HStack {
-//        Image(systemName: "star.fill")
-//        Text("4.7").font(.headline).fontWeight(.bold)
-//    }
-//
-//    HStack(spacing: 15){
-//        VStack(spacing: 15){
-//            ZStack {
-//                Image("plane").resizable().aspectRatio(contentMode: .fill).opacity(0.6)
-//
-//                VStack{
-//                    Spacer()
-//                    Text("Tickets").fontWeight(.heavy)
-//                }.padding()
-//            }.frame(width: 165, height: 165).cornerRadius(20)
-//
-//            ZStack {
-//                Image("map").resizable().aspectRatio(contentMode: .fill).opacity(0.6)
-//
-//                VStack{
-//                    Spacer()
-//                    Text("Hotels").fontWeight(.heavy)
-//                }.padding()
-//            }.frame(width: 165, height: 165).cornerRadius(20)
-//        }
-//        VStack (spacing: 15){
-//            ZStack {
-//                Image("place").resizable().aspectRatio(contentMode: .fill).opacity(0.6)
-//
-//                VStack{
-//                    Spacer()
-//                    Text("places").fontWeight(.heavy)
-//                }.padding()
-//            }.frame(width: 165, height: 165).cornerRadius(20)
-//
-//            ZStack {
-//                Image("cloud").resizable().aspectRatio(contentMode: .fill).opacity(0.6)
-//
-//                VStack{
-//                    Spacer()
-//                    Text("weather").fontWeight(.heavy)
-//                }.padding()
-//            }.frame(width: 165, height: 165).cornerRadius(20)
-//        }
-//    }.padding(.vertical)
-//}.padding()
-//Spacer()
