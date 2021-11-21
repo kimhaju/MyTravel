@@ -59,7 +59,7 @@ struct TravelScrollView: View {
 
                             Spacer(minLength: 0)
                         }
-                    }
+                    }.navigationTitle("봄 여행")
                 }
                 
             }).introspectTabBarController { (UITabBarController) in

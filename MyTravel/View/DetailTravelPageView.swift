@@ -19,23 +19,44 @@ struct DetailTravelPageView: View {
         let item = homeModel.travelItems
         
         VStack{
-            VStack {
+            VStack{
                 ZStack(alignment: Alignment(horizontal: .center, vertical: .top)){
-                    WebImage(url: URL(string: item[selection].item_image)).resizable().aspectRatio(contentMode: .fill).frame(height: 330).matchedGeometryEffect(id: item[selection].item_image, in: animation)
+                    WebImage(url: URL(string: item[selection].item_image))
+                        .resizable()
+                        .frame(height: 330)
+                        .clipShape(RoundedShape(corners: [.bottomLeft, .bottomRight]))
+                        .matchedGeometryEffect(id: item[selection].item_image, in: animation)
                     
-                    HStack {
-                        Button(action: {}){
+                    HStack{
+                        Spacer()
+                        
+                        Button(action: {}) {
+                            
                             Image(systemName: "suit.heart")
                                 .foregroundColor(.black)
                                 .padding()
                                 .background(Color.white)
                                 .clipShape(Circle())
-                            
                         }
                     }
+                    .padding()
+                    .padding(.top,UIApplication.shared.windows.first?.safeAreaInsets.top)
+                }
+                
+                HStack(alignment: .top){
                     
+                    VStack(alignment: .leading, spacing: 12){
+                        
+                        Text(item[selection].item_name)
+                            .font(.title)
+                            .foregroundColor(Color.pink)
+                            .fontWeight(.bold)
+                            .matchedGeometryEffect(id: item[selection].item_name, in: animation)
+                        
+                    }
                 }
             }
+            Spacer(minLength: 0)
         }
     }
 }
@@ -43,32 +64,32 @@ struct DetailTravelPageView: View {
 
 struct RoundedShape : Shape {
     var corners : UIRectCorner
-    
+
     func path(in rect: CGRect) -> Path {
-        
+
         let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: 45, height: 45))
-        
+
         return Path(path.cgPath)
     }
 }
 
-struct BottomView: View {
-     @State var index = 1
-    
-    var body: some View {
-        VStack(alignment: .leading, spacing: 15){
-            
-            Text("인원")
-                .font(.title)
-                .fontWeight(.bold)
-                .foregroundColor(Color("txt"))
-            
-            Text("여행 갈 사람들")
-                .font(.caption)
-            
-        }
-    }
-}
+//struct BottomView: View {
+//     @State var index = 1
+//
+//    var body: some View {
+//        VStack(alignment: .leading, spacing: 15){
+//
+//            Text("인원")
+//                .font(.title)
+//                .fontWeight(.bold)
+//                .foregroundColor(Color("txt"))
+//
+//            Text("여행 갈 사람들")
+//                .font(.caption)
+//
+//        }
+//    }
+//}
 
 //VStack{
 //    VStack{
