@@ -1,0 +1,146 @@
+[
+ {
+    "id": "1",
+    "airplane": "아시아나 항공",
+    "starting": "서울",
+    "departure": "06:00",
+    "image": "asiana",
+    "arrive": "07:10",
+    "week": "수요일"
+  },
+   {
+    "id": "2",
+    "airplane": "아시아나 항공",
+    "starting": "서울",
+    "departure": "06:05",
+    "image": "asiana",
+    "arrive": "07:15",
+    "week": "일,월,화,수,목,금,토"
+  },
+  {
+    "id": "3",
+    "airplane": "제주 항공",
+    "starting": "서울",
+    "departure": "06:10",
+    "image": "jeju",
+    "arrive": "07:25",
+    "week": "금"
+  }
+  ,{
+    "id": "4",
+    "airplane": "아시아나 항공",
+    "starting": "서울",
+    "departure": "06:20",
+    "image": "asiana",
+    "arrive": "07:25",
+    "week": "금"
+  }
+  ,{
+    "id": "5",
+    "airplane": "아시아나 항공",
+    "starting": "서울",
+    "departure": "06:25",
+    "image": "asiana",
+    "arrive": "07:35",
+    "week": "일,월,화,수,목,금,토"
+  }
+   ,{
+    "id": "6",
+    "airplane": "대한 항공",
+    "starting": "서울",
+    "departure": "06:40",
+    "image": "daehan",
+    "arrive": "07:50",
+    "week": "금"
+  }
+  ,{
+    "id": "7",
+    "airplane": "제주 항공",
+    "starting": "서울",
+    "departure": "06:45",
+    "image": "jeju",
+    "arrive": "07:55",
+    "week": "금"
+  }
+  ,{
+    "id": "8",
+    "airplane": "아시아나 항공",
+    "starting": "서울",
+    "departure": "06:50",
+    "image": "asiana",
+    "arrive": "08:00",
+    "week": "금"
+  }
+   ,{
+    "id": "9",
+    "airplane": "에어 부산",
+    "starting": "서울",
+    "departure": "06:55",
+    "image": "busan",
+    "arrive": "08:05",
+    "week": "일,월,화,수,목,금,토"
+  }
+   ,{
+    "id": "10",
+    "airplane": "제주 항공",
+    "starting": "서울",
+    "departure": "07:00",
+    "image": "jeju",
+    "arrive": "08:10",
+    "week": "일,월,화,수,목,금,토"
+  }
+  ,{
+    "id": "11",
+    "airplane": "아시아나 항공",
+    "starting": "서울",
+    "departure": "07:05",
+    "image": "asiana",
+    "arrive": "08:20",
+    "week": "일,월,화,수,목,금,토"
+  }
+   ,{
+    "id": "12",
+    "airplane": "대한 항공",
+    "starting": "서울",
+    "departure": "07:20",
+    "image": "daehan",
+    "arrive": "08:30",
+    "week": "일,월,화,수,목,금,토"
+  }
+   ,{
+    "id": "13",
+    "airplane": "아시아나 항공",
+    "starting": "서울",
+    "departure": "07:35",
+    "image": "asiana",
+    "arrive": "08:45",
+    "week": "일,월,화,수,목,금,토"
+  }
+  ,{
+    "id": "14",
+    "airplane": "제주 항공",
+    "starting": "서울",
+    "departure": "07:40",
+    "image": "jeju",
+    "arrive": "08:50",
+    "week": "일,월,화,수,목,금,토"
+  }
+     ,{
+    "id": "15",
+    "airplane": "에어 부산",
+    "starting": "서울",
+    "departure": "07:45",
+    "image": "busan",
+    "arrive": "08:55",
+    "week": "화,금"
+  }
+    ,{
+    "id": "16",
+    "airplane": "대한 항공",
+    "starting": "서울",
+    "departure": "08:00",
+    "image": "daehan",
+    "arrive": "08:55",
+    "week": "일,월,화,수,목,금,토"
+  }
+]

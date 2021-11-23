@@ -10,32 +10,29 @@ import SDWebImageSwiftUI
 import Firebase
 
 struct DetailTravelPageView: View {
-    @ObservedObject var homeModel : HomeViewModel
-    @Binding var selection: Int
+    var item : TravelItemModel
     var animation : Namespace.ID
     @State var index = 1
     @State var wakeUp = Date()
-    
+
     var body: some View {
-        let item = homeModel.travelItems
-        
         //->발견한 에러: 11월 22일-> 스크롤뷰 설정할때 방향을 설정하려면 자식뷰를 하나로 통일해야 한다 vsStack 하던지 HsStack하던지
         ScrollView() {
-            
+
             VStack{
                 VStack{
                     ZStack(alignment: Alignment(horizontal: .center, vertical: .top)){
-                        WebImage(url: URL(string: item[selection].item_image))
+                        WebImage(url: URL(string: item.item_image))
                             .resizable()
                             .frame(height: 330)
                             .clipShape(RoundedShape(corners: [.bottomLeft, .bottomRight]))
-                            .matchedGeometryEffect(id: item[selection].item_image, in: animation)
-                        
+                            .matchedGeometryEffect(id: item.item_image, in: animation)
+
                         HStack{
                             Spacer()
-                            
+
                             Button(action: {}) {
-                                
+
                                 Image(systemName: "suit.heart")
                                     .foregroundColor(.black)
                                     .padding()
@@ -46,65 +43,65 @@ struct DetailTravelPageView: View {
                         .padding()
                         .padding(.top,UIApplication.shared.windows.first?.safeAreaInsets.top)
                     }
-                    
+
                     HStack(alignment: .top){
-                        
+
                         VStack(alignment: .leading, spacing: 12){
-                            
-                            Text(item[selection].item_name)
+
+                            Text(item.item_name)
                                 .font(.title)
                                 .foregroundColor(Color.pink)
                                 .fontWeight(.bold)
-                                .matchedGeometryEffect(id: item[selection].item_name, in: animation)
-                            
+                                .matchedGeometryEffect(id: item.item_name, in: animation)
+
                             HStack(spacing: 10){
-                                
+
                                 Image("locate")
-                                Text(item[selection].item_address)
+                                Text(item.item_address)
                                     .foregroundColor(.black)
-                                    .matchedGeometryEffect(id: item[selection].item_address, in: animation)
-                                
+                                    .matchedGeometryEffect(id: item.item_address, in: animation)
+
                                 HStack(spacing: 5){
                                     ForEach(1...5, id: \.self){ index in
                                         Image(systemName: "star.fill")
-                                            .foregroundColor(index <= Int(item[selection].item_ratings) ?? 0 ? Color.pink : .gray)
+                                            .foregroundColor(index <= Int(item.item_ratings) ?? 0 ? Color.pink : .gray)
                                     }
                                 }
                             }
                         }
-                        
+
                         Spacer(minLength: 0)
-                        Text(item[selection].item_price)
+                        Text(item.item_price)
                             .font(.title)
                             .fontWeight(.bold)
                             .foregroundColor(Color.pink)
-                        
+
                     }
                     .padding()
                     .padding(.bottom)
-                    
+
                 }
                 .background(Color.white)
                 .clipShape(RoundedShape(corners: [.bottomLeft,.bottomRight]))
-                
+
                 Spacer(minLength: 0)
             }
             .background(Color.white)
-            
+
             VStack(alignment: .leading, spacing: 15){
                 Text("인원")
                     .font(.title3)
                     .fontWeight(.bold)
                     .foregroundColor(Color.pink)
-                
+
                 Text("같이 갈 인원을 선택하세요.")
-                
+
                 HStack(spacing: 15){
-                    
+
                     ForEach(1...6,id: \.self){i in
-                        
+
                         Button(action: {index = i}) {
-                            
+
                             Text("\(i)")
                                 .fontWeight(.bold)
                                 .foregroundColor(index == i ? .white : .pink)
@@ -117,22 +114,22 @@ struct DetailTravelPageView: View {
                     Spacer(minLength: 0)
                 }
                 .padding(.top)
-                
+
                 DatePicker("가는 날짜: ", selection: $wakeUp, in: Date()...).padding().foregroundColor(Color.pink)
-                
+
                 Text("설명")
                     .font(.title3)
                     .fontWeight(.bold)
                     .foregroundColor(Color.pink)
                     .padding(.top,10)
-                
-                Text(item[selection].item_details).multilineTextAlignment(.leading)
-                
+
+                Text(item.item_details).multilineTextAlignment(.leading)
+
                 Spacer(minLength: 0)
-                
+
                 HStack {
                     Spacer(minLength: 0)
-                    
+
                     Button(action: {}){
                         Text("예약하기")
                             .fontWeight(.bold)
@@ -152,17 +149,22 @@ struct DetailTravelPageView: View {
     }
 }
 
-
-    struct RoundedShape : Shape {
-        var corners : UIRectCorner
-
-        func path(in rect: CGRect) -> Path {
-
-            let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: 45, height: 45))
-
-            return Path(path.cgPath)
-        }
+struct RoundedShape : Shape {
+    var corners : UIRectCorner
+    
+    func path(in rect: CGRect) -> Path {
+        
+        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: 45, height: 45))
+        
+        return Path(path.cgPath)
     }
+}
+
+
+
+
+
+
 
 //struct BottomView: View {
 //     @State var index = 1

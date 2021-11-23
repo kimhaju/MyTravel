@@ -10,7 +10,7 @@ import Firebase
 
 struct TravelItemModel: Identifiable {
    
-    var id : String?
+    var id : String
     var item_name: String
     var item_address: String
     var item_details: String

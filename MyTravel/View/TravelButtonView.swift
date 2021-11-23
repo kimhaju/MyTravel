@@ -14,12 +14,15 @@ struct TravelButtonView: View {
     var body: some View {
         HStack {
             VStack{
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/){
-                    Image(systemName: "airplane").foregroundColor(.white).padding(.all, 18).background(Color.blue.opacity(0.8)).cornerRadius(12).shadow(radius: 2)
-                }
+                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                    NavigationLink(destination: AirplaneView()){
+                        Image(systemName: "airplane").foregroundColor(.white).padding(.all, 18).background(Color.blue.opacity(0.8)).cornerRadius(12).shadow(radius: 2)
+                    }
+                })
                 Text("Flights").font(.footnote).bold()
             }
             Spacer()
+            
             VStack{
                 Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/){
                     Image(systemName: "bed.double.fill").foregroundColor(.white).padding(.all, 18).background(Color.orange.opacity(0.8)).cornerRadius(12).shadow(radius: 2)
@@ -27,15 +30,8 @@ struct TravelButtonView: View {
                 Text("Hotels").font(.footnote).bold()
             }
             Spacer()
+            
             VStack{
-//                Button(action: {
-//                    //->위치 정보 셋팅
-//                    travelButtonModel.requestPermission()
-//                }){
-//                    Image(systemName: "location.fill").foregroundColor(.white).padding(.all, 18).background(Color.purple.opacity(0.8)).cornerRadius(12).shadow(radius: 2)
-//                }
-//                Text("places").font(.footnote).bold()
-                
                 Button(action: {}, label: {
                     NavigationLink(destination: LocationViewModel()){
                         Image(systemName: "location.fill").foregroundColor(.white).padding(.all, 18).background(Color.purple.opacity(0.8)).cornerRadius(12).shadow(radius: 2)
@@ -44,6 +40,7 @@ struct TravelButtonView: View {
                 Text("places").font(.footnote).bold()
             }
             Spacer()
+            
             VStack{
                 Button(action: {}, label: {
                     NavigationLink(destination: MoreView()){

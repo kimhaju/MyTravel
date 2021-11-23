@@ -23,15 +23,15 @@ class HomeViewModel: ObservableObject {
                 print("데이터가 존재하지 않습니다.")
                 return
             }
-            for data in snapshot!.documentChanges {
+            for item in snapshot!.documentChanges {
                 
-                let id = data.document.documentID
-                let name = data.document.get("item_name") as? String ?? ""
-                let address = data.document.get("item_address") as? String ?? ""
-                let details = data.document.get("item_details") as? String ?? ""
-                let image = data.document.get("item_image") as? String ?? ""
-                let ratings = data.document.get("item_ratings") as? String ?? ""
-                let price = data.document.get("item_price") as? String ?? ""
+                let id = item.document.documentID
+                let name = item.document.get("item_name") as! String
+                let address = item.document.get("item_address") as! String
+                let details = item.document.get("item_details") as! String
+                let image = item.document.get("item_image") as! String
+                let ratings = item.document.get("item_ratings") as! String
+                let price = item.document.get("item_price") as! String
                 
                 self.travelItems.append(TravelItemModel(id: id, item_name: name, item_address: address, item_details: details, item_image: image, item_price: price, item_ratings: ratings))
             }

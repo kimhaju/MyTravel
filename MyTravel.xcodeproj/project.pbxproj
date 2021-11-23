@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A072759274C8D0700F584D2 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A072758274C8D0700F584D2 /* Loader.swift */; };
 		9A0AD5C2273BB5E7009CC4FA /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0AD5C1273BB5E7009CC4FA /* ProfileView.swift */; };
+		9A28E711274B94A000B0746B /* airplaneTime.json in Resources */ = {isa = PBXBuildFile; fileRef = 9A28E710274B94A000B0746B /* airplaneTime.json */; };
+		9A28E715274BA43800B0746B /* AirplaneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A28E714274BA43800B0746B /* AirplaneModel.swift */; };
+		9A28E719274BB24000B0746B /* CodableBundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A28E718274BB24000B0746B /* CodableBundleExtension.swift */; };
 		9A295F7C2740003200A2ECED /* ShowTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A295F7B2740003200A2ECED /* ShowTabBar.swift */; };
 		9A311A9727395CBA004B789D /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A311A9627395CBA004B789D /* SessionStore.swift */; };
 		9A311A9F273966F7004B789D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A311A9E273966F7004B789D /* HomeView.swift */; };
@@ -26,6 +30,7 @@
 		9A4E096A2733E4ED002BB0B7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A4E09692733E4ED002BB0B7 /* Preview Assets.xcassets */; };
 		9A4E09742733E69E002BB0B7 /* FormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4E09732733E69E002BB0B7 /* FormField.swift */; };
 		9A4E097927341994002BB0B7 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4E097827341994002BB0B7 /* LoginView.swift */; };
+		9A57C97F274BD73E000ABEFA /* TempView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A57C97E274BD73E000ABEFA /* TempView.swift */; };
 		9A65257A2743966200EA959B /* MyWishlistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6525792743966200EA959B /* MyWishlistViewModel.swift */; };
 		9A6525802743BE4900EA959B /* TravelItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A65257F2743BE4900EA959B /* TravelItemModel.swift */; };
 		9A6525842743C08D00EA959B /* TravelScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6525832743C08D00EA959B /* TravelScrollView.swift */; };
@@ -35,6 +40,7 @@
 		9A93C1342736763300882FB1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A93C1332736763300882FB1 /* Extensions.swift */; };
 		9A93C138273694CF00882FB1 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A93C137273694CF00882FB1 /* AuthService.swift */; };
 		9A93C13B2736963E00882FB1 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A93C13A2736963E00882FB1 /* StorageService.swift */; };
+		9A9DBBA5274B8002006FCEF3 /* AirplaneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9DBBA4274B8002006FCEF3 /* AirplaneView.swift */; };
 		9AA02A542734CF7700DE7C39 /* ButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA02A532734CF7700DE7C39 /* ButtonModifier.swift */; };
 		9AA02A572734DB7600DE7C39 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA02A562734DB7600DE7C39 /* RegisterView.swift */; };
 		9AE20CC3273AAA9A0043B760 /* ProfileHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE20CC2273AAA9A0043B760 /* ProfileHeaderViewModel.swift */; };
@@ -47,7 +53,11 @@
 		179E4FC8CAB3F32C146357AB /* Pods-MyTravel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTravel.debug.xcconfig"; path = "Target Support Files/Pods-MyTravel/Pods-MyTravel.debug.xcconfig"; sourceTree = "<group>"; };
 		3B4169D6F3E82FA9FBE40192 /* Pods_MyTravel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTravel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AEEDE8AEF9EB68463E410D0 /* Pods-MyTravel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTravel.release.xcconfig"; path = "Target Support Files/Pods-MyTravel/Pods-MyTravel.release.xcconfig"; sourceTree = "<group>"; };
+		9A072758274C8D0700F584D2 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		9A0AD5C1273BB5E7009CC4FA /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		9A28E710274B94A000B0746B /* airplaneTime.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = airplaneTime.json; sourceTree = "<group>"; };
+		9A28E714274BA43800B0746B /* AirplaneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirplaneModel.swift; sourceTree = "<group>"; };
+		9A28E718274BB24000B0746B /* CodableBundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableBundleExtension.swift; sourceTree = "<group>"; };
 		9A295F7B2740003200A2ECED /* ShowTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowTabBar.swift; sourceTree = "<group>"; };
 		9A311A9627395CBA004B789D /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
 		9A311A9E273966F7004B789D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -68,6 +78,7 @@
 		9A4E096B2733E4ED002BB0B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A4E09732733E69E002BB0B7 /* FormField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormField.swift; sourceTree = "<group>"; };
 		9A4E097827341994002BB0B7 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		9A57C97E274BD73E000ABEFA /* TempView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempView.swift; sourceTree = "<group>"; };
 		9A6525792743966200EA959B /* MyWishlistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWishlistViewModel.swift; sourceTree = "<group>"; };
 		9A65257F2743BE4900EA959B /* TravelItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelItemModel.swift; sourceTree = "<group>"; };
 		9A6525832743C08D00EA959B /* TravelScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelScrollView.swift; sourceTree = "<group>"; };
@@ -77,6 +88,7 @@
 		9A93C1332736763300882FB1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		9A93C137273694CF00882FB1 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		9A93C13A2736963E00882FB1 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		9A9DBBA4274B8002006FCEF3 /* AirplaneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirplaneView.swift; sourceTree = "<group>"; };
 		9AA02A532734CF7700DE7C39 /* ButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModifier.swift; sourceTree = "<group>"; };
 		9AA02A562734DB7600DE7C39 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		9AE20CC2273AAA9A0043B760 /* ProfileHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderViewModel.swift; sourceTree = "<group>"; };
@@ -96,6 +108,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A28E70F274B943D00B0746B /* JSONdata */ = {
+			isa = PBXGroup;
+			children = (
+				9A28E710274B94A000B0746B /* airplaneTime.json */,
+			);
+			path = JSONdata;
+			sourceTree = "<group>";
+		};
 		9A4553D82735223C003422B7 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +124,8 @@
 				9A4553D92735226B003422B7 /* ImagePicker.swift */,
 				9A93C1332736763300882FB1 /* Extensions.swift */,
 				9A295F7B2740003200A2ECED /* ShowTabBar.swift */,
+				9A28E718274BB24000B0746B /* CodableBundleExtension.swift */,
+				9A072758274C8D0700F584D2 /* Loader.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -113,6 +135,7 @@
 			children = (
 				9A4553FA27356BD7003422B7 /* UserModel.swift */,
 				9A65257F2743BE4900EA959B /* TravelItemModel.swift */,
+				9A28E714274BA43800B0746B /* AirplaneModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -138,14 +161,15 @@
 		9A4E09612733E4E9002BB0B7 /* MyTravel */ = {
 			isa = PBXGroup;
 			children = (
+				9A28E70F274B943D00B0746B /* JSONdata */,
 				9A93C136273694BC00882FB1 /* API */,
 				9A4553F927356BA9003422B7 /* Model */,
-				9A4553DD27354571003422B7 /* GoogleService-Info.plist */,
 				9A4553D82735223C003422B7 /* Utils */,
 				9A4E097727341972002BB0B7 /* View */,
 				9A4E09722733E65C002BB0B7 /* ViewModel */,
 				9A4E09622733E4E9002BB0B7 /* MyTravelApp.swift */,
 				9A4E09642733E4E9002BB0B7 /* ContentView.swift */,
+				9A4553DD27354571003422B7 /* GoogleService-Info.plist */,
 				9A4E09662733E4ED002BB0B7 /* Assets.xcassets */,
 				9A4E096B2733E4ED002BB0B7 /* Info.plist */,
 				9A4E09682733E4ED002BB0B7 /* Preview Content */,
@@ -177,15 +201,16 @@
 		9A4E097727341972002BB0B7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9A9DBBA3274B7FD2006FCEF3 /* ButtonTapView */,
 				9A65257D2743BAB800EA959B /* TapView */,
 				9A65257C2743BA9900EA959B /* Auth */,
 				9A311A9E273966F7004B789D /* HomeView.swift */,
 				9A0AD5C1273BB5E7009CC4FA /* ProfileView.swift */,
 				9A4A7CAE273AB3A500635ABC /* TravelButtonView.swift */,
-				9A3FEC832742677B008A63F1 /* MoreView.swift */,
 				9A6525832743C08D00EA959B /* TravelScrollView.swift */,
 				9A4A7CB1273AB42400635ABC /* DetailTravelPageView.swift */,
 				9AFC631A2744FD8F00DA003F /* PackageView.swift */,
+				9A57C97E274BD73E000ABEFA /* TempView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -217,6 +242,15 @@
 				9A311A9627395CBA004B789D /* SessionStore.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		9A9DBBA3274B7FD2006FCEF3 /* ButtonTapView */ = {
+			isa = PBXGroup;
+			children = (
+				9A9DBBA4274B8002006FCEF3 /* AirplaneView.swift */,
+				9A3FEC832742677B008A63F1 /* MoreView.swift */,
+			);
+			path = ButtonTapView;
 			sourceTree = "<group>";
 		};
 		D511853DC28739308DCF6E9C /* Pods */ = {
@@ -295,6 +329,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A28E711274B94A000B0746B /* airplaneTime.json in Resources */,
 				9A4E096A2733E4ED002BB0B7 /* Preview Assets.xcassets in Resources */,
 				9A4E09672733E4ED002BB0B7 /* Assets.xcassets in Resources */,
 				9A4553DE27354571003422B7 /* GoogleService-Info.plist in Resources */,
@@ -362,15 +397,20 @@
 				9AFC631B2744FD8F00DA003F /* PackageView.swift in Sources */,
 				9A3FEC872742939E008A63F1 /* LocationViewModel.swift in Sources */,
 				9A3FEC842742677B008A63F1 /* MoreView.swift in Sources */,
+				9A57C97F274BD73E000ABEFA /* TempView.swift in Sources */,
 				9A6525802743BE4900EA959B /* TravelItemModel.swift in Sources */,
 				9A4E097927341994002BB0B7 /* LoginView.swift in Sources */,
 				9A4553DA2735226B003422B7 /* ImagePicker.swift in Sources */,
 				9AA02A572734DB7600DE7C39 /* RegisterView.swift in Sources */,
 				9A666B37273E465600AB1047 /* MainTabView.swift in Sources */,
+				9A9DBBA5274B8002006FCEF3 /* AirplaneView.swift in Sources */,
+				9A072759274C8D0700F584D2 /* Loader.swift in Sources */,
 				9A0AD5C2273BB5E7009CC4FA /* ProfileView.swift in Sources */,
 				9AE20CC3273AAA9A0043B760 /* ProfileHeaderViewModel.swift in Sources */,
 				9AE7AF94273D61D0009DA31F /* ProfileSettingViewModel.swift in Sources */,
+				9A28E715274BA43800B0746B /* AirplaneModel.swift in Sources */,
 				9A93C138273694CF00882FB1 /* AuthService.swift in Sources */,
+				9A28E719274BB24000B0746B /* CodableBundleExtension.swift in Sources */,
 				9A666B31273DFFA600AB1047 /* MyCalendarView.swift in Sources */,
 				9A4A7CAF273AB3A500635ABC /* TravelButtonView.swift in Sources */,
 				9A4E09632733E4E9002BB0B7 /* MyTravelApp.swift in Sources */,
