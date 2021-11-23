@@ -17,14 +17,7 @@ struct TravelItemModel: Identifiable {
     var item_image: String
     var item_price: String
     var item_ratings: String
-
+    
+    //->아이템 집어넣기
 }
 
-struct DetailItemViewModel: Identifiable, Codable{
-    var id = UUID().uuidString
-    var item_name: String
-    var item_address: String
-    var item_details: String
-    var item_image: String
-    var item_ratings: String
-}

@@ -15,7 +15,8 @@ struct DetailTravelPageView: View {
     @Binding var show : Bool
     @State var index = 1
     @State var wakeUp = Date()
-
+    
+    
     var body: some View {
         //->발견한 에러: 11월 22일-> 스크롤뷰 설정할때 방향을 설정하려면 자식뷰를 하나로 통일해야 한다 vsStack 하던지 HsStack하던지
         ScrollView() {
@@ -45,14 +46,13 @@ struct DetailTravelPageView: View {
                             }
                             Spacer()
 
-                            Button(action: {}) {
-
-                                Image(systemName: "suit.heart")
-                                    .foregroundColor(.black)
+                            Button(action: {}, label: {
+                                Image(systemName: "heart")
+                                    .foregroundColor(.pink)
                                     .padding()
                                     .background(Color.white)
                                     .clipShape(Circle())
-                            }
+                            })
                         }
                         .padding()
                         .padding(.top,UIApplication.shared.windows.first?.safeAreaInsets.top)

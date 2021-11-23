@@ -6,36 +6,35 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct MyWishlistView: View {
-    @ObservedObject var listData: MyWishlistViewModel
+    @ObservedObject var wishData = MyWishlistViewModel()
+    var user: User?
+    
+    //->11,23 위시 리스트 조회 가능 해당 유저 아이디로만 조회 가능하도록 설정
     
     var body: some View {
         VStack{
-            Button(action: {
-                withAnimation(.easeIn){
-                    listData.showlist.toggle()
-                }
-            }, label: {
-                HStack(spacing: 15){
-                    Image(systemName: "heart.fill").resizable().frame(width: 20, height: 20)
-                    
-                    Text("wishList").fontWeight(.bold).foregroundColor(.black)
-                    
-                    Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
-                }
-                .padding()
-            })
             
-            Spacer()
-            
-            HStack{
+            if self.wishData.wishItems.count != 0 {
                 
-                Spacer()
-                
-                Text("version 0.1").fontWeight(.bold)
-            }.padding(10)
-        }.frame(width: UIScreen.main.bounds.width / 1.6).background(Color.white)
+                List(self.wishData.wishItems){ item in
+                    AnimatedImage(url: URL(string: item.wish_image))
+                        .resizable()
+                        .frame(width: 55, height: 55)
+                        .cornerRadius(10)
+                        
+                    VStack(alignment: .leading){
+                        Text(item.wish_name)
+                        Text(item.wish_date)
+                    }
+                }
+            }
+        }
+        .onAppear(){
+            self.wishData.getWishItem(userId: user!.uid)
+        }
     }
 }
 
@@ -44,3 +43,28 @@ struct MyWishlistView: View {
 //        MyWishlistView(listData: <#MyWishlistViewModel#>)
 //    }
 //}
+
+//    Button(action: {
+//        withAnimation(.easeIn){
+//            listData.showlist.toggle()
+//        }
+//    }, label: {
+//        HStack(spacing: 15){
+//            Image(systemName: "heart.fill").resizable().frame(width: 20, height: 20)
+//
+//            Text("wishList").fontWeight(.bold).foregroundColor(.black)
+//
+//            Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
+//        }
+//        .padding()
+//    })
+//
+//    Spacer()
+//
+//    HStack{
+//
+//        Spacer()
+//
+//        Text("version 0.1").fontWeight(.bold)
+//    }.padding(10)
+//}.frame(width: UIScreen.main.bounds.width / 1.6).background(Color.white)

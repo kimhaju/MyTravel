@@ -37,6 +37,7 @@
 		9A666B31273DFFA600AB1047 /* MyCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A666B30273DFFA600AB1047 /* MyCalendarView.swift */; };
 		9A666B34273E002600AB1047 /* MyWishlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A666B33273E002600AB1047 /* MyWishlistView.swift */; };
 		9A666B37273E465600AB1047 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A666B36273E465600AB1047 /* MainTabView.swift */; };
+		9A7B655D274CB2CC002AE26E /* WishlistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7B655C274CB2CC002AE26E /* WishlistModel.swift */; };
 		9A93C1342736763300882FB1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A93C1332736763300882FB1 /* Extensions.swift */; };
 		9A93C138273694CF00882FB1 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A93C137273694CF00882FB1 /* AuthService.swift */; };
 		9A93C13B2736963E00882FB1 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A93C13A2736963E00882FB1 /* StorageService.swift */; };
@@ -85,6 +86,7 @@
 		9A666B30273DFFA600AB1047 /* MyCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCalendarView.swift; sourceTree = "<group>"; };
 		9A666B33273E002600AB1047 /* MyWishlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWishlistView.swift; sourceTree = "<group>"; };
 		9A666B36273E465600AB1047 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		9A7B655C274CB2CC002AE26E /* WishlistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistModel.swift; sourceTree = "<group>"; };
 		9A93C1332736763300882FB1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		9A93C137273694CF00882FB1 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		9A93C13A2736963E00882FB1 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				9A4553FA27356BD7003422B7 /* UserModel.swift */,
 				9A65257F2743BE4900EA959B /* TravelItemModel.swift */,
 				9A28E714274BA43800B0746B /* AirplaneModel.swift */,
+				9A7B655C274CB2CC002AE26E /* WishlistModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				9A311A9F273966F7004B789D /* HomeView.swift in Sources */,
 				9A311A9727395CBA004B789D /* SessionStore.swift in Sources */,
 				9A3FEC752741F772008A63F1 /* HomeViewModel.swift in Sources */,
+				9A7B655D274CB2CC002AE26E /* WishlistModel.swift in Sources */,
 				9A4E09652733E4E9002BB0B7 /* ContentView.swift in Sources */,
 				9A4553FB27356BD7003422B7 /* UserModel.swift in Sources */,
 				9A666B34273E002600AB1047 /* MyWishlistView.swift in Sources */,

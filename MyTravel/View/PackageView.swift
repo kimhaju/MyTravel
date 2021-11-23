@@ -14,33 +14,33 @@ struct PackageView: View {
     var body: some View {
         VStack(alignment: .leading){
             HStack {
-                        Text("tema").font(.largeTitle)
-                        Text("trips").font(.title).fontWeight(.heavy)
+                Text("tema").font(.largeTitle)
+                Text("trips").font(.title).fontWeight(.heavy)
                 Spacer()
-                    }.padding(.vertical)
-
-                    HStack(spacing:60){
-                        Text("season").bold()
-                        Text("feeling").foregroundColor(.secondary)
-                        Text("all").foregroundColor(.secondary)
-                    }.padding(.vertical)
+            }.padding(.vertical)
+            
+            HStack(spacing:60){
+                Text("season").bold()
+                Text("feeling").foregroundColor(.secondary)
+                Text("all").foregroundColor(.secondary)
+            }.padding(.vertical)
             
             //->11.23 에러 고침 인바이런 먼트 오브젝트를 받아들일수 있게 작업을 미리 해줘야 했었음. 감사합니다 스택 오버 플로우 스크롤 뷰에 인바리언 먼트 오브젝트 타입을 추가해줌 !
-                            
-                    ScrollView (.horizontal, showsIndicators: false){
-                        HStack(spacing: 20){
-                            NavigationLink(
-                               
-                                destination: TravelScrollView().environmentObject(homeModel)){
-                            Image("spring").resizable().aspectRatio(contentMode: .fill).frame(width: 200, height: 270).cornerRadius(12)
-                            }.buttonStyle(PlainButtonStyle())
-                            Image("summer").resizable().aspectRatio(contentMode: .fill).frame(width: 200, height: 270).cornerRadius(12)
-                            Image("fall").resizable().aspectRatio(contentMode: .fill).frame(width: 200, height: 270).cornerRadius(12)
-                            Image("winter").resizable().aspectRatio(contentMode: .fill).frame(width: 200, height: 270).cornerRadius(12)
-                        }
-                    }.padding(.trailing,-20)
             
-                }.padding().foregroundColor(Color(UIColor.systemIndigo)).edgesIgnoringSafeArea(.bottom)
+            ScrollView (.horizontal, showsIndicators: false){
+                HStack(spacing: 20){
+                    NavigationLink(
+                        
+                        destination: TravelScrollView().environmentObject(homeModel)){
+                        Image("spring").resizable().aspectRatio(contentMode: .fill).frame(width: 200, height: 270).cornerRadius(12)
+                    }.buttonStyle(PlainButtonStyle())
+                    Image("summer").resizable().aspectRatio(contentMode: .fill).frame(width: 200, height: 270).cornerRadius(12)
+                    Image("fall").resizable().aspectRatio(contentMode: .fill).frame(width: 200, height: 270).cornerRadius(12)
+                    Image("winter").resizable().aspectRatio(contentMode: .fill).frame(width: 200, height: 270).cornerRadius(12)
+                }
+            }.padding(.trailing,-20)
+            
+        }.padding().foregroundColor(Color(UIColor.systemIndigo)).edgesIgnoringSafeArea(.bottom)
     }
 }
 
