@@ -13,6 +13,7 @@ struct MyWishlistView: View {
     var user: User?
     
     //->11,23 위시 리스트 조회 가능 해당 유저 아이디로만 조회 가능하도록 설정
+    //->근데 솔직히 디자인 구림 디자인 이쁘게 해주자 
     
     var body: some View {
         VStack{

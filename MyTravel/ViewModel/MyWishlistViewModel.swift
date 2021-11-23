@@ -34,8 +34,6 @@ class MyWishlistViewModel: ObservableObject {
                 let wish_date = item.get("wish_date") as! String
                 let userId = item.get("user_id") as! String
                 
-                print(userId)
-                
                 self.wishItems.append(WishlistModel(id: id, wish_name: name, wish_address: address, wish_details: details, wish_image: image, wish_price: price, wish_date: wish_date, user_id: userId))
          
             }
