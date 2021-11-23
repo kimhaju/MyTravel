@@ -43,6 +43,8 @@ struct TravelScrollView: View {
             UITabBarController.tabBar.isHidden = true
             uiTabarController = UITabBarController
         }.onDisappear{
+            
+            
             uiTabarController?.tabBar.isHidden = false
         }
     }
