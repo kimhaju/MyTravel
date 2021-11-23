@@ -12,6 +12,7 @@ import Firebase
 struct DetailTravelPageView: View {
     var item : TravelItemModel
     var animation : Namespace.ID
+    @Binding var show : Bool
     @State var index = 1
     @State var wakeUp = Date()
 
@@ -29,6 +30,19 @@ struct DetailTravelPageView: View {
                             .matchedGeometryEffect(id: item.item_image, in: animation)
 
                         HStack{
+                            
+                            Button(action: {
+                                
+                                withAnimation(.spring()){show.toggle()}
+                                
+                            }) {
+                                
+                                Image(systemName: "chevron.left")
+                                    .foregroundColor(.black)
+                                    .padding()
+                                    .background(Color.white)
+                                    .clipShape(Circle())
+                            }
                             Spacer()
 
                             Button(action: {}) {
@@ -54,18 +68,21 @@ struct DetailTravelPageView: View {
                                 .fontWeight(.bold)
                                 .matchedGeometryEffect(id: item.item_name, in: animation)
 
-                            HStack(spacing: 10){
+                            HStack(spacing: 5) {
 
                                 Image("locate")
                                 Text(item.item_address)
                                     .foregroundColor(.black)
+                                    .frame(width: 120)
                                     .matchedGeometryEffect(id: item.item_address, in: animation)
-
+  
                                 HStack(spacing: 5){
+                                    
                                     ForEach(1...5, id: \.self){ index in
                                         Image(systemName: "star.fill")
                                             .foregroundColor(index <= Int(item.item_ratings) ?? 0 ? Color.pink : .gray)
                                     }
+                                    
                                 }
                             }
                         }
@@ -160,58 +177,3 @@ struct RoundedShape : Shape {
     }
 }
 
-
-
-
-
-
-
-//struct BottomView: View {
-//     @State var index = 1
-//     @State var wakeUp = Date()
-//
-//
-//    var body: some View {
-//        VStack(alignment: .leading, spacing: 15){
-//
-//            Text("인원")
-//                .font(.title)
-//                .fontWeight(.bold)
-//                .foregroundColor(Color.pink)
-//
-//            Text("여행 갈 사람들")
-//                .font(.caption)
-//
-//            HStack(spacing: 15){
-//                ForEach(1...6, id: \.self){ i in
-//
-//                    Text("\(i)")
-//                        .fontWeight(.bold)
-//                        .foregroundColor(index == i ? .gray : .pink)
-//                        .padding(.vertical,10)
-//                        .padding(.horizontal)
-//                        .background(Color("Color").opacity(index == i ? 1 : 0.07))
-//                        .cornerRadius(4)
-//                }
-//            }
-//            Spacer(minLength: 0)
-//        }
-//        .padding(.top)
-//        //->이전의 날짜는 선택 불가(일단 임시로 이렇게 해놓고 나중에 오픈소스 라이브러리 적용)
-//        DatePicker("가는 날짜: ", selection: $wakeUp, in: Date()...).padding()
-//
-//        Text("설명")
-//            .font(.title)
-//            .fontWeight(.bold)
-//            .foregroundColor(Color.pink)
-//            .padding(.top,10)
-//        HStack{
-//
-//        }
-//        .padding([.horizontal,.top])
-//    }
-//}
-//}
-//
-//
-//

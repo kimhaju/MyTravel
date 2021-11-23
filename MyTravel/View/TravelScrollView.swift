@@ -12,12 +12,12 @@ import Introspect
 
 //->11.18일 왜 이 뷰를 다른데서 못불러오나 했는데 뷰가 빠져서 그랬었다 
 struct TravelScrollView: View {
-    
     @EnvironmentObject var homeModel : HomeViewModel
     @Namespace var animation
+    @State var show = false
     
     //    @State var showDetails = true
-    //    @State var uiTabarController: UITabBarController?
+    @State var uiTabarController: UITabBarController?
     //    @State public var selection: Int = 0
 
     //->11월 18일 문제 해결. 조회는 완료 되었으나 (읽기 기록이 파이어베이스에 남았음)
@@ -39,7 +39,14 @@ struct TravelScrollView: View {
                 Loader()
             }
         }
+        .introspectTabBarController { (UITabBarController) in
+            UITabBarController.tabBar.isHidden = true
+            uiTabarController = UITabBarController
+        }.onDisappear{
+            uiTabarController?.tabBar.isHidden = false
+        }
     }
+    
 }
 
 struct CellView: View {
@@ -81,7 +88,7 @@ struct CellView: View {
         }.background(Color.white)
         .cornerRadius(20)
         .sheet(isPresented: self.$show){
-            DetailTravelPageView(item: travelItem, animation: animation)
+            DetailTravelPageView(item: travelItem, animation: animation, show: $show)
         }
     }
 }
@@ -125,11 +132,6 @@ struct CellView: View {
 //        }.navigationTitle("봄 여행")
 //    }
 //
-//}).introspectTabBarController { (UITabBarController) in
-//    UITabBarController.tabBar.isHidden = true
-//    uiTabarController = UITabBarController
-//}.onDisappear{
-//    uiTabarController?.tabBar.isHidden = false
-//}
+//})
 //
 //

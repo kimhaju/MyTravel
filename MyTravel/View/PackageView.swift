@@ -26,8 +26,7 @@ struct PackageView: View {
                     }.padding(.vertical)
             
             //->11.23 에러 고침 인바이런 먼트 오브젝트를 받아들일수 있게 작업을 미리 해줘야 했었음. 감사합니다 스택 오버 플로우 스크롤 뷰에 인바리언 먼트 오브젝트 타입을 추가해줌 !
-//                                https://stackoverflow.com/questions/57582813/swiftui-thread-1-fatal-error-no-observable-object-of-type-myobject-type-fou
-
+                            
                     ScrollView (.horizontal, showsIndicators: false){
                         HStack(spacing: 20){
                             NavigationLink(
