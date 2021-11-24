@@ -11,12 +11,14 @@ import SDWebImageSwiftUI
 struct MyWishlistView: View {
     @ObservedObject var wishData = MyWishlistViewModel()
     var user: User?
-    
+  
     //->11,23 위시 리스트 조회 가능 해당 유저 아이디로만 조회 가능하도록 설정
     //->근데 솔직히 디자인 구림 디자인 이쁘게 해주자 
     
     var body: some View {
         VStack{
+            
+            Text(self.wishData.wishItems.count != 0 ? "당신의 위시리스트" : "위시리스트에 항목이 없습니다.").font(.title).padding([.top,.leading])
             
             if self.wishData.wishItems.count != 0 {
                 
@@ -28,7 +30,7 @@ struct MyWishlistView: View {
                         
                     VStack(alignment: .leading){
                         Text(item.wish_name)
-                        Text(item.wish_date)
+                        Text("\(item.dateString)")
                     }
                 }
             }

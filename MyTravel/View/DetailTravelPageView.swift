@@ -12,10 +12,12 @@ import Firebase
 struct DetailTravelPageView: View {
     var item : TravelItemModel
     var animation : Namespace.ID
+    var user: User?
     @Binding var show : Bool
-    @State var index = 1
-    @State var wakeUp = Date()
-    
+    @State private var index = 1
+    @State private var wakeUp = Date()
+    //->아이템 추가시 안내 알림
+    @State private var successAlert = false
     
     var body: some View {
         //->발견한 에러: 11월 22일-> 스크롤뷰 설정할때 방향을 설정하려면 자식뷰를 하나로 통일해야 한다 vsStack 하던지 HsStack하던지
@@ -147,7 +149,30 @@ struct DetailTravelPageView: View {
                 HStack {
                     Spacer(minLength: 0)
 
-                    Button(action: {}){
+                    //->11.24 일단 여기 하드코딩으로 처리하고 나중에 따로 뷰모델로 빼기
+                    Button(action: {
+                        
+                        let db = Firestore.firestore()
+                        
+                        db.collection("wishlist").document().setData(
+                            ["user_id": user!.uid,
+                             "wish_address": self.item.item_address,
+                             "wish_date": wakeUp,
+                             "wish_people": index,
+                             "wish_price": self.item.item_price,
+                             "wish_image": self.item.item_image,
+                             "wish_details": self.item.item_details,
+                             "wish_name": self.item.item_name
+                            ]) { error in
+                            
+                            if error != nil {
+                                print("추가에 문제가 생김:  \(error!.localizedDescription)")
+                                return
+                            }
+                            self.successAlert = true
+                        }
+                        
+                    }){
                         Text("예약하기")
                             .fontWeight(.bold)
                             .foregroundColor(.white)
@@ -155,6 +180,8 @@ struct DetailTravelPageView: View {
                             .frame(width: UIScreen.main.bounds.width - 100)
                             .background(Color.pink)
                             .clipShape(Capsule())
+                    }.alert(isPresented: $successAlert){
+                        Alert(title: Text("예약"), message: Text("\(item.item_name) 예약에 성공하셨습니다!"), dismissButton: .default(Text("x")))
                     }
                     Spacer(minLength: 0)
                 }

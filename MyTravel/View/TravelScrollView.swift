@@ -52,8 +52,8 @@ struct TravelScrollView: View {
 }
 
 struct CellView: View {
-    
     var travelItem : TravelItemModel
+    @EnvironmentObject var userSession: SessionStore
     @State var show = false
     @Namespace var animation
     
@@ -90,7 +90,9 @@ struct CellView: View {
         }.background(Color.white)
         .cornerRadius(20)
         .sheet(isPresented: self.$show){
-            DetailTravelPageView(item: travelItem, animation: animation, show: $show)
+//            DetailTravelPageView(item: travelItem, animation: animation, show: $show)
+            
+            DetailTravelPageView(item: travelItem, animation: animation, user: self.userSession.session, show: $show)
         }
     }
 }

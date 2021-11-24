@@ -13,6 +13,7 @@ class MyWishlistViewModel: ObservableObject {
     @Published var showlist = false
     @Published var wishItems = [WishlistModel]()
     
+    //->조회
     func getWishItem(userId: String) {
         let db = Firestore.firestore()
         
@@ -31,12 +32,16 @@ class MyWishlistViewModel: ObservableObject {
                 let details = item.get("wish_details") as! String
                 let image = item.get("wish_image") as! String
                 let price = item.get("wish_price") as! String
-                let wish_date = item.get("wish_date") as! String
+                let date = (item.get("wish_date") as? Timestamp)?.dateValue() ?? Date()
+                let people = item.get("wish_people") as! Int
                 let userId = item.get("user_id") as! String
                 
-                self.wishItems.append(WishlistModel(id: id, wish_name: name, wish_address: address, wish_details: details, wish_image: image, wish_price: price, wish_date: wish_date, user_id: userId))
+                self.wishItems.append(WishlistModel(id: id, wish_name: name, wish_address: address, wish_details: details, wish_image: image, wish_price: price, wish_date: date, wish_people: people, user_id: userId))
          
             }
         }
     }
 }
+
+//                let wish_date = item.get("wish_date") as! String
+//                let wish_date = item.get(Timestamp.self)

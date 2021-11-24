@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Firebase
 
 struct WishlistModel: Identifiable{
     var id : String
@@ -16,7 +17,16 @@ struct WishlistModel: Identifiable{
     var wish_image: String
 //    var wish_ratings: String
     var wish_price: String
-    //->유저 아이디
-    var wish_date: String
+    //->날짜를 읽을 수 있게 셋팅
+    var wish_date: Date
+    
+    var dateString : String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        return formatter.string(from: wish_date)
+    }
+    //->같이갈 인원 선택
+    var wish_people: Int
+    
     var user_id : String
 }
