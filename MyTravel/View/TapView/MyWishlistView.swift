@@ -16,27 +16,16 @@ struct MyWishlistView: View {
     //->근데 솔직히 디자인 구림 디자인 이쁘게 해주자 
     
     var body: some View {
-        VStack{
-            
-            Text(self.wishData.wishItems.count != 0 ? "당신의 위시리스트" : "위시리스트에 항목이 없습니다.").font(.title).padding([.top,.leading])
-            
-            if self.wishData.wishItems.count != 0 {
-                
-                List(self.wishData.wishItems){ item in
-                    AnimatedImage(url: URL(string: item.wish_image))
-                        .resizable()
-                        .frame(width: 55, height: 55)
-                        .cornerRadius(10)
-                        
-                    VStack(alignment: .leading){
-                        Text(item.wish_name)
-                        Text("\(item.dateString)")
-                    }
+        NavigationView {
+            List(wishData.wishItems) { item in
+                VStack (alignment: .leading){
+                    Text(item.wish_name)
+                    Text(item.dateString)
                 }
+            }.navigationBarTitle("위시리스트")
+            .onAppear(){
+                self.wishData.getWishItem(userId: user!.uid)
             }
-        }
-        .onAppear(){
-            self.wishData.getWishItem(userId: user!.uid)
         }
     }
 }
