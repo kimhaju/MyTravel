@@ -42,9 +42,6 @@ struct HomeView: View {
                     
                     // MARK: - trips
                     PackageView()
-                    
-                    Text("check")
-                    
                 }
             }
         }

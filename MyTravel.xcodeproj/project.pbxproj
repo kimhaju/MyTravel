@@ -30,7 +30,6 @@
 		9A4E096A2733E4ED002BB0B7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A4E09692733E4ED002BB0B7 /* Preview Assets.xcassets */; };
 		9A4E09742733E69E002BB0B7 /* FormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4E09732733E69E002BB0B7 /* FormField.swift */; };
 		9A4E097927341994002BB0B7 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4E097827341994002BB0B7 /* LoginView.swift */; };
-		9A57C97F274BD73E000ABEFA /* TempView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A57C97E274BD73E000ABEFA /* TempView.swift */; };
 		9A65257A2743966200EA959B /* MyWishlistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6525792743966200EA959B /* MyWishlistViewModel.swift */; };
 		9A6525802743BE4900EA959B /* TravelItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A65257F2743BE4900EA959B /* TravelItemModel.swift */; };
 		9A6525842743C08D00EA959B /* TravelScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6525832743C08D00EA959B /* TravelScrollView.swift */; };
@@ -38,6 +37,7 @@
 		9A666B34273E002600AB1047 /* MyWishlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A666B33273E002600AB1047 /* MyWishlistView.swift */; };
 		9A666B37273E465600AB1047 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A666B36273E465600AB1047 /* MainTabView.swift */; };
 		9A7B655D274CB2CC002AE26E /* WishlistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7B655C274CB2CC002AE26E /* WishlistModel.swift */; };
+		9A92AEEB274FAF5C009C1652 /* TemaSelectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A92AEEA274FAF5C009C1652 /* TemaSelectedView.swift */; };
 		9A93C1342736763300882FB1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A93C1332736763300882FB1 /* Extensions.swift */; };
 		9A93C138273694CF00882FB1 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A93C137273694CF00882FB1 /* AuthService.swift */; };
 		9A93C13B2736963E00882FB1 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A93C13A2736963E00882FB1 /* StorageService.swift */; };
@@ -79,7 +79,6 @@
 		9A4E096B2733E4ED002BB0B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A4E09732733E69E002BB0B7 /* FormField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormField.swift; sourceTree = "<group>"; };
 		9A4E097827341994002BB0B7 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		9A57C97E274BD73E000ABEFA /* TempView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempView.swift; sourceTree = "<group>"; };
 		9A6525792743966200EA959B /* MyWishlistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWishlistViewModel.swift; sourceTree = "<group>"; };
 		9A65257F2743BE4900EA959B /* TravelItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelItemModel.swift; sourceTree = "<group>"; };
 		9A6525832743C08D00EA959B /* TravelScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelScrollView.swift; sourceTree = "<group>"; };
@@ -87,6 +86,7 @@
 		9A666B33273E002600AB1047 /* MyWishlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWishlistView.swift; sourceTree = "<group>"; };
 		9A666B36273E465600AB1047 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		9A7B655C274CB2CC002AE26E /* WishlistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistModel.swift; sourceTree = "<group>"; };
+		9A92AEEA274FAF5C009C1652 /* TemaSelectedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemaSelectedView.swift; sourceTree = "<group>"; };
 		9A93C1332736763300882FB1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		9A93C137273694CF00882FB1 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		9A93C13A2736963E00882FB1 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
@@ -213,7 +213,7 @@
 				9A6525832743C08D00EA959B /* TravelScrollView.swift */,
 				9A4A7CB1273AB42400635ABC /* DetailTravelPageView.swift */,
 				9AFC631A2744FD8F00DA003F /* PackageView.swift */,
-				9A57C97E274BD73E000ABEFA /* TempView.swift */,
+				9A92AEEA274FAF5C009C1652 /* TemaSelectedView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -388,6 +388,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A92AEEB274FAF5C009C1652 /* TemaSelectedView.swift in Sources */,
 				9A4A7CB2273AB42400635ABC /* DetailTravelPageView.swift in Sources */,
 				9A4E09742733E69E002BB0B7 /* FormField.swift in Sources */,
 				9A93C1342736763300882FB1 /* Extensions.swift in Sources */,
@@ -401,7 +402,6 @@
 				9AFC631B2744FD8F00DA003F /* PackageView.swift in Sources */,
 				9A3FEC872742939E008A63F1 /* LocationViewModel.swift in Sources */,
 				9A3FEC842742677B008A63F1 /* MoreView.swift in Sources */,
-				9A57C97F274BD73E000ABEFA /* TempView.swift in Sources */,
 				9A6525802743BE4900EA959B /* TravelItemModel.swift in Sources */,
 				9A4E097927341994002BB0B7 /* LoginView.swift in Sources */,
 				9A4553DA2735226B003422B7 /* ImagePicker.swift in Sources */,

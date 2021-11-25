@@ -9,8 +9,6 @@ import SwiftUI
 
 struct PackageView: View {
     
-    @StateObject var homeModel = HomeViewModel()
-    
     var body: some View {
         VStack(alignment: .leading){
             HStack {
@@ -18,34 +16,26 @@ struct PackageView: View {
                 Text("trips").font(.title).fontWeight(.heavy)
                 Spacer()
             }.padding(.vertical)
+            .foregroundColor(Color(UIColor.systemIndigo)).edgesIgnoringSafeArea(.bottom)
             
-            HStack(spacing:60){
-                Text("season").bold()
-                Text("feeling").foregroundColor(.secondary)
-                Text("all").foregroundColor(.secondary)
-            }.padding(.vertical)
+            TemaSelectedView()
             
+           
             //->11.23 에러 고침 인바이런 먼트 오브젝트를 받아들일수 있게 작업을 미리 해줘야 했었음. 감사합니다 스택 오버 플로우 스크롤 뷰에 인바리언 먼트 오브젝트 타입을 추가해줌 !
             
-            ScrollView (.horizontal, showsIndicators: false){
-                HStack(spacing: 20){
-                    NavigationLink(
-                        
-                        destination: TravelScrollView().environmentObject(homeModel)){
-                        Image("spring").resizable().aspectRatio(contentMode: .fill).frame(width: 200, height: 270).cornerRadius(12)
-                    }.buttonStyle(PlainButtonStyle())
-                    Image("summer").resizable().aspectRatio(contentMode: .fill).frame(width: 200, height: 270).cornerRadius(12)
-                    Image("fall").resizable().aspectRatio(contentMode: .fill).frame(width: 200, height: 270).cornerRadius(12)
-                    Image("winter").resizable().aspectRatio(contentMode: .fill).frame(width: 200, height: 270).cornerRadius(12)
-                }
-            }.padding(.trailing,-20)
-            
-        }.padding().foregroundColor(Color(UIColor.systemIndigo)).edgesIgnoringSafeArea(.bottom)
+            //->여기는 따로 뷰로 빼서 선택할시 화면을 전환 시키자
+        }
     }
 }
 
-struct PackageView_Previews: PreviewProvider {
-    static var previews: some View {
-        PackageView()
-    }
-}
+
+
+//HStack(spacing: 60){
+//    Picker("TemaTravel", selection: $selectedTema){
+//        ForEach(TemaTravel.allCases){ tema in
+//            Text(tema.rawValue.capitalized).tag(tema)
+//
+//        }
+//    }
+//}.pickerStyle(SegmentedPickerStyle())
+//.padding(.vertical)

@@ -18,7 +18,7 @@ struct DetailTravelPageView: View {
     @State private var wakeUp = Date()
     //->아이템 추가시 안내 알림
     @State private var successAlert = false
-    @Environment(\.presentationMode) var presentation
+   
     
     var body: some View {
         //->발견한 에러: 11월 22일-> 스크롤뷰 설정할때 방향을 설정하려면 자식뷰를 하나로 통일해야 한다 vsStack 하던지 HsStack하던지
@@ -171,7 +171,7 @@ struct DetailTravelPageView: View {
                                 return
                             }
                             self.successAlert = true
-                            self.presentation.wrappedValue.dismiss()
+                           
                         }
                         
                     }){

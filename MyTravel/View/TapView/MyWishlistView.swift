@@ -22,7 +22,7 @@ struct MyWishlistView: View {
                     Text(item.wish_name)
                     Text(item.dateString)
                 }
-            }.navigationBarTitle("위시리스트")
+            }.navigationBarTitle("\(user!.username) 님의 위시리스트")
             .onAppear(){
                 self.wishData.getWishItem(userId: user!.uid)
             }
