@@ -24,9 +24,11 @@ struct TravelButtonView: View {
             Spacer()
             
             VStack{
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/){
-                    Image(systemName: "bed.double.fill").foregroundColor(.white).padding(.all, 18).background(Color.orange.opacity(0.8)).cornerRadius(12).shadow(radius: 2)
-                }
+                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                    NavigationLink(destination: HotelListView()){
+                        Image(systemName: "bed.double.fill").foregroundColor(.white).padding(.all, 18).background(Color.orange.opacity(0.8)).cornerRadius(12).shadow(radius: 2)
+                    }
+                })
                 Text("Hotels").font(.footnote).bold()
             }
             Spacer()

@@ -63,20 +63,39 @@ struct FeelingTema: View {
         ScrollView(.vertical, showsIndicators: false){
             VStack(spacing: 20){
                 
-                Image("alone").resizable().aspectRatio(contentMode: .fill).frame(width: 400, height: 200).cornerRadius(12)
+                Image("alone").resizable().aspectRatio(contentMode: .fill).frame(width: 400, height: 200).cornerRadius(12).blur(radius: 2)
+                    .overlay(ImageOveraly(word: "혼자 떠나볼까요?"), alignment: .center)
                 
-                Image("romance").resizable().aspectRatio(contentMode: .fill).frame(width: 400, height: 200).cornerRadius(12)
+                Image("romance").resizable().aspectRatio(contentMode: .fill).frame(width: 400, height: 200).cornerRadius(12).blur(radius: 2)
+                    .overlay(ImageOveraly(word: "동화같은 여행을 원한다면?"), alignment: .center)
                 
                 Image("sad").resizable().aspectRatio(contentMode: .fill).frame(width: 400, height: 200).cornerRadius(12)
+                    .blur(radius: 2)
+                    .overlay(ImageOveraly(word: "기분 전환 하러가요!"), alignment: .center)
                 
                 Image("night").resizable().aspectRatio(contentMode: .fill).frame(width: 400, height: 200).cornerRadius(12)
+                    .blur(radius: 2)
+                    .overlay(ImageOveraly(word: "야경을 즐기고 싶다면?"), alignment: .center)
                 
                 Image("temple").resizable().aspectRatio(contentMode: .fill).frame(width: 400, height: 200).cornerRadius(12)
+                    .blur(radius: 2)
+                    .overlay(ImageOveraly(word: "역사 탐방도 좋죠!"), alignment: .center)
             }
         }.padding(.trailing,-20)
         .padding().foregroundColor(Color(UIColor.systemIndigo)).edgesIgnoringSafeArea(.bottom)
     }
 }
+
+struct ImageOveraly: View {
+    @State var word = ""
+    
+    var body: some View {
+        ZStack {
+            Text(word).font(.system(size: 23)).fontWeight(.bold).padding(6).foregroundColor(.white)
+        }.padding(6)
+    }
+}
+
 
 struct AllTema: View {
     
