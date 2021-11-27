@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct HotelListView: View {
     let hotels: [HotelModel] = Bundle.main.decodeHotel("hotelReserve.json")
@@ -24,13 +25,13 @@ struct HotelListView: View {
 struct HotelCellView: View {
     var hotelModel : HotelModel
     @EnvironmentObject var userSession: SessionStore
-    @State var show = false
     @Namespace var animation
+    @State var show = false
     
     var body: some View {
         VStack{
             
-            Image(hotelModel.image).resizable().frame(height: 270)
+            WebImage(url: hotelModel.image).resizable().frame(height: 270)
             
             HStack{
                 VStack(alignment: .leading){
@@ -60,7 +61,7 @@ struct HotelCellView: View {
         }.background(Color.white)
         .cornerRadius(20)
         .sheet(isPresented: self.$show){
-            DetailHotelView()
+            DetailHotelView(hotelItem: hotelModel, animation: animation, user: self.userSession.session, show: $show)
         }
     }
 }

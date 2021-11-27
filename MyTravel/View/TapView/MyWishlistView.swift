@@ -19,6 +19,7 @@ struct MyWishlistView: View {
         NavigationView {
             List(wishData.wishItems) { item in
                 VStack (alignment: .leading){
+                    WebImage(url: URL(string: item.wish_image)).resizable().frame(width: 70, height: 50)
                     Text(item.wish_name)
                     Text(item.dateString)
                 }

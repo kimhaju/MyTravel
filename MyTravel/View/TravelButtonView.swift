@@ -10,6 +10,7 @@ import SwiftUI
 struct TravelButtonView: View {
     
     @StateObject var travelButtonModel = TravelButtonViewModel()
+    
    
     var body: some View {
         HStack {

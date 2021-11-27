@@ -3,17 +3,17 @@
     "id": "1",
     "hotel_name": "페이 호텔",
     "hotel_locate": "서울",
-    "hotel_people": 2,
-    "image": "hotel1",
+    "image": "https://cdn.pixabay.com/photo/2019/05/28/00/15/indoors-4234071_1280.jpg",
     "check_in": "15:00",
+    "hotel_ratings": "4",
     "details": "무료 wifi제공, 조식제공, 가족끼리 방문하기 좋은 공원이 차로 10분이내 위치. 2인실이나 최대 4인까지 추가 가능. 추가시 문의 주세요."
   },
    {
      "id": "2",
      "hotel_name": "미향 호텔",
      "hotel_locate": "대구",
-     "hotel_people": 5,
-     "image": "hotel2",
+     "image": "https://cdn.pixabay.com/photo/2018/06/14/21/15/the-interior-of-the-3475656_1280.jpg",
+     "hotel_ratings": "2",
      "check_in": "14:00",
      "details": "기본 시설완비. 고사양 게임이 돌아가는 특실 준비. 인원추가시 문의주세요."
   },
@@ -21,8 +21,8 @@
       "id": "3",
       "hotel_name": "미르 호텔",
       "hotel_locate": "대전",
-      "hotel_people": 2,
-      "image": "hotel3",
+      "image": "https://cdn.pixabay.com/photo/2016/06/10/01/05/hotel-room-1447201_1280.jpg",
+      "hotel_ratings": "5",
       "check_in": "15:00",
       "details": "편안한 분위기의 객실 제공. 인근에 카페와 레스토랑이 많음. 인원 추가 불가."
   }
@@ -30,8 +30,8 @@
       "id": "4",
       "hotel_name": "송 호텔",
       "hotel_locate": "광주",
-      "hotel_people": 4,
-      "image": "hotel4",
+      "image": "https://cdn.pixabay.com/photo/2017/01/14/12/48/hotel-1979406_1280.jpg",
+      "hotel_ratings": "5",
       "check_in": "18:00",
       "details": "아름다운 야경을 볼 수 있음. 체크인 시간이 늦은 만큼 체크아웃 시간이 16:00. 이용에 참고해주세요."
   }
@@ -39,8 +39,8 @@
       "id": "5",
       "hotel_name": "제우 호텔",
       "hotel_locate": "제주",
-      "hotel_people": 5,
-      "image": "hotel5",
+      "image": "https://cdn.pixabay.com/photo/2021/10/06/15/05/bedroom-6686061_1280.jpg",
+      "hotel_ratings": "3",
       "check_in": "13:00",
       "details": "개인 수영장 구비, 인원 추가 가능. 수영장 물 교체는 오전 11시마다 진행. 이용시 참고."
   }
@@ -48,8 +48,8 @@
        "id": "6",
        "hotel_name": "탐라 호텔",
        "hotel_locate": "서귀포",
-       "hotel_people": 4,
-       "image": "hotel6",
+       "image": "https://cdn.pixabay.com/photo/2017/04/28/22/16/room-2269594_1280.jpg",
+       "hotel_ratings": "3",
        "check_in": "15:00",
        "details": "이국적인 분위기로 색다른 분위기를 즐길 수 있는 곳. 가장 인기 많은 객실이니 예약에 서둘러주세요."
   }

@@ -8,12 +8,14 @@
 import Foundation
 
 struct HotelModel: Codable, Identifiable {
+    
     let id : String
     let hotel_name : String
     let hotel_locate: String
-    let hotel_people: Int
-    let image: String
+    let image: URL
     let check_in: String
     let details: String
+    let hotel_ratings : String
+
 }
 
