@@ -14,7 +14,8 @@ struct MainTabView: View {
     var user: User?
     @State var uiTabarController: UITabBarController?
     @State private var tabSelection: Tabs = .home
-    @EnvironmentObject var userSession: SessionStore
+    @EnvironmentObject var userSession : SessionStore
+    
     
     var body: some View {
             TabView(selection: $tabSelection) {

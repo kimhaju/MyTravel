@@ -42,6 +42,17 @@ class MyWishlistViewModel: ObservableObject {
             }
         }
     }
+    
+    //->이제 아이템 삭제도 해야지 11.27
+    func deleteWishItem(deleteId: String){
+        db.collection("wishlist").document(deleteId).delete { error in
+            if error != nil {
+                print("삭제하는데 문제가 생겼습니다: \((error?.localizedDescription)!)")
+            }else {
+                print("아이템을 성공적으로 박박 지움")
+            }
+        }
+    }
 }
 
 

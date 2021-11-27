@@ -18,10 +18,19 @@ struct MyWishlistView: View {
     var body: some View {
         NavigationView {
             List(wishData.wishItems) { item in
-                VStack (alignment: .leading){
-                    WebImage(url: URL(string: item.wish_image)).resizable().frame(width: 70, height: 50)
-                    Text(item.wish_name)
-                    Text(item.dateString)
+                    HStack{
+                        VStack (alignment: .leading){
+                            WebImage(url: URL(string: item.wish_image)).resizable().frame(width: 70, height: 50)
+                            Text(item.wish_name)
+                            Text(item.dateString)
+                        }
+                            
+                        Button(action: {
+                            self.wishData.deleteWishItem(deleteId: item.id)
+                            
+                        }){
+                            Image(systemName: "trash").resizable().frame(width: 20, height: 20)
+                        }
                 }
             }.navigationBarTitle("\(user!.username) 님의 위시리스트")
             .onAppear(){
@@ -31,33 +40,5 @@ struct MyWishlistView: View {
     }
 }
 
-//struct MyWishlistView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MyWishlistView(listData: <#MyWishlistViewModel#>)
-//    }
-//}
 
-//    Button(action: {
-//        withAnimation(.easeIn){
-//            listData.showlist.toggle()
-//        }
-//    }, label: {
-//        HStack(spacing: 15){
-//            Image(systemName: "heart.fill").resizable().frame(width: 20, height: 20)
-//
-//            Text("wishList").fontWeight(.bold).foregroundColor(.black)
-//
-//            Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
-//        }
-//        .padding()
-//    })
-//
-//    Spacer()
-//
-//    HStack{
-//
-//        Spacer()
-//
-//        Text("version 0.1").fontWeight(.bold)
-//    }.padding(10)
-//}.frame(width: UIScreen.main.bounds.width / 1.6).background(Color.white)
+
