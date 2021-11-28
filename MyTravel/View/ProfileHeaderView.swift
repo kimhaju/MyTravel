@@ -8,7 +8,7 @@
 import SwiftUI
 import SDWebImageSwiftUI
 
-struct ProfileHeaderViewModel: View {
+struct ProfileHeaderView: View {
     var user: User?
     @EnvironmentObject var userSession: SessionStore
     var body: some View {
@@ -47,10 +47,4 @@ struct ProfileHeaderViewModel: View {
     }
 }
 
-
-struct ProfileViewModel_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileHeaderViewModel()
-    }
-}
 

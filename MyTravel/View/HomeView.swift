@@ -18,7 +18,7 @@ struct HomeView: View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: false){
                 VStack{
-                    ProfileHeaderViewModel(user: self.session.session)
+                    ProfileHeaderView(user: self.session.session)
                     //->검색창
                     HStack {
                         HStack {

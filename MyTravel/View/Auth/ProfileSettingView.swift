@@ -8,7 +8,7 @@
 import SwiftUI
 import SDWebImageSwiftUI
 
-struct ProfileSettingViewModel: View {
+struct ProfileSettingView: View {
     var user: User?
     @EnvironmentObject var userSession: SessionStore
     var body: some View {
@@ -33,6 +33,10 @@ struct ProfileSettingViewModel: View {
                         Text("logout").font(.headline)
                     }
                 }
+                VStack {
+                    Text("edit profile").font(.title3)
+                }
+                
             }else {
                 LoginView()
             }
@@ -41,8 +45,3 @@ struct ProfileSettingViewModel: View {
     }
 }
 
-struct ProfileSettingViewModel_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileSettingViewModel()
-    }
-}

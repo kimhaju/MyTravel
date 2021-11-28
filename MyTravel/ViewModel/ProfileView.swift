@@ -21,7 +21,7 @@ struct ProfileView: View {
         
         //->유저 프로파일 이미지
         VStack{
-            ProfileSettingViewModel(user: self.userSession.session)
+            ProfileSettingView(user: self.userSession.session)
         }.introspectTabBarController { (UITabBarController) in
             UITabBarController.tabBar.isHidden = true
             uiTabarController = UITabBarController

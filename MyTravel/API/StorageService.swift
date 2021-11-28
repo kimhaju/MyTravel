@@ -23,6 +23,46 @@ class StorageService {
         return storageProfile.child(userId)
     }
     
+    //->프로파일 수정만들기
+    static func editProfile(userId: String, username: String, country: String, imageDate: Data, metaData: StorageMetadata, storageProfileImageRef: StorageReference, onError: @escaping(_ errorMessage: String) -> Void){
+        
+        storageProfileImageRef.putData(imageDate, metadata: metaData) { StorageMetadata, error in
+            
+            if error != nil {
+                onError(error!.localizedDescription)
+                return
+            }
+            
+            storageProfileImageRef.downloadURL { url, error in
+                if let metaImageUrl = url?.absoluteString {
+                    
+                    if let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest() {
+                        
+                        changeRequest.photoURL = url
+                        changeRequest.displayName = username
+                        changeRequest.commitChanges { error in
+                            if error != nil {
+                                
+                                onError(error!.localizedDescription)
+                                return
+                            }
+                        }
+                    }
+                    let firestoreUserId = AuthService.getUserId(userId: userId)
+                    
+                    //->유저가 수정 가능한거 이름, 국가, 이미지만 가능하도록
+                    firestoreUserId.updateData([
+                        "profileImageURL" : metaImageUrl,
+                        "username": username,
+                        "country": country
+                    ])
+                    
+                }
+            }
+        }
+        
+    }
+    
     //->프로파일 이미지 저장(메타 데이터, 이미지에 대한 정보를 삽입 )
     static func saveProfile(userId:String, username: String, email: String, country:String ,imageData: Data, metaData: StorageMetadata, storageProfileImageRef: StorageReference, onSuccess: @escaping(_ user: User) -> Void, onError: @escaping(_ errorMessage: String) -> Void){
         
