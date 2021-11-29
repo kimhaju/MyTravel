@@ -11,6 +11,8 @@ import SDWebImageSwiftUI
 struct ProfileSettingView: View {
     var user: User?
     @EnvironmentObject var userSession: SessionStore
+    @State private var isLinkedActive = false
+    
     var body: some View {
         VStack{
             if(userSession.session != nil){
@@ -33,9 +35,13 @@ struct ProfileSettingView: View {
                         Text("logout").font(.headline)
                     }
                 }
-                VStack {
-                    Text("edit profile").font(.title3)
+                NavigationLink(destination: EditProfileView(session: self.userSession.session), isActive: $isLinkedActive){
+                    Button(action: {self.isLinkedActive = true}){
+                        Text("Edit Profile").font(.title).modifier(ButtonModifier())
+                    }.padding(.horizontal)
+                    
                 }
+               
                 
             }else {
                 LoginView()
