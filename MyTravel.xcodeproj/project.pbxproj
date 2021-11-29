@@ -50,6 +50,9 @@
 		9AA02A542734CF7700DE7C39 /* ButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA02A532734CF7700DE7C39 /* ButtonModifier.swift */; };
 		9AA02A572734DB7600DE7C39 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA02A562734DB7600DE7C39 /* RegisterView.swift */; };
 		9AC9D13A27511EE900119F7B /* DetailHotelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC9D13927511EE900119F7B /* DetailHotelView.swift */; };
+		9ADC552D2754EEB100091AC9 /* CustomDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC552C2754EEB100091AC9 /* CustomDatePicker.swift */; };
+		9ADC55322754F9CA00091AC9 /* DateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC55312754F9CA00091AC9 /* DateValue.swift */; };
+		9ADC55352755195200091AC9 /* TravelTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC55342755195200091AC9 /* TravelTask.swift */; };
 		9AE20CC3273AAA9A0043B760 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE20CC2273AAA9A0043B760 /* ProfileHeaderView.swift */; };
 		9AE7AF94273D61D0009DA31F /* ProfileSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE7AF93273D61D0009DA31F /* ProfileSettingView.swift */; };
 		9AFC631B2744FD8F00DA003F /* PackageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFC631A2744FD8F00DA003F /* PackageView.swift */; };
@@ -105,6 +108,9 @@
 		9AA02A532734CF7700DE7C39 /* ButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModifier.swift; sourceTree = "<group>"; };
 		9AA02A562734DB7600DE7C39 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		9AC9D13927511EE900119F7B /* DetailHotelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHotelView.swift; sourceTree = "<group>"; };
+		9ADC552C2754EEB100091AC9 /* CustomDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDatePicker.swift; sourceTree = "<group>"; };
+		9ADC55312754F9CA00091AC9 /* DateValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateValue.swift; sourceTree = "<group>"; };
+		9ADC55342755195200091AC9 /* TravelTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTask.swift; sourceTree = "<group>"; };
 		9AE20CC2273AAA9A0043B760 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		9AE7AF93273D61D0009DA31F /* ProfileSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingView.swift; sourceTree = "<group>"; };
 		9AFC631A2744FD8F00DA003F /* PackageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageView.swift; sourceTree = "<group>"; };
@@ -154,6 +160,8 @@
 				9A28E714274BA43800B0746B /* AirplaneModel.swift */,
 				9A7B655C274CB2CC002AE26E /* WishlistModel.swift */,
 				9A76F0D52751154E00592CD7 /* HotelModel.swift */,
+				9ADC55312754F9CA00091AC9 /* DateValue.swift */,
+				9ADC55342755195200091AC9 /* TravelTask.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -249,6 +257,7 @@
 				9A666B36273E465600AB1047 /* MainTabView.swift */,
 				9A666B30273DFFA600AB1047 /* MyCalendarView.swift */,
 				9A666B33273E002600AB1047 /* MyWishlistView.swift */,
+				9ADC552C2754EEB100091AC9 /* CustomDatePicker.swift */,
 			);
 			path = TapView;
 			sourceTree = "<group>";
@@ -411,6 +420,7 @@
 				9A4A7CB2273AB42400635ABC /* DetailTravelPageView.swift in Sources */,
 				9A4E09742733E69E002BB0B7 /* FormField.swift in Sources */,
 				9A93C1342736763300882FB1 /* Extensions.swift in Sources */,
+				9ADC55352755195200091AC9 /* TravelTask.swift in Sources */,
 				9A311A9F273966F7004B789D /* HomeView.swift in Sources */,
 				9A311A9727395CBA004B789D /* SessionStore.swift in Sources */,
 				9A3FEC752741F772008A63F1 /* HomeViewModel.swift in Sources */,
@@ -430,9 +440,11 @@
 				9AA02A572734DB7600DE7C39 /* RegisterView.swift in Sources */,
 				9A666B37273E465600AB1047 /* MainTabView.swift in Sources */,
 				9A9DBBA5274B8002006FCEF3 /* AirplaneView.swift in Sources */,
+				9ADC55322754F9CA00091AC9 /* DateValue.swift in Sources */,
 				9A072759274C8D0700F584D2 /* Loader.swift in Sources */,
 				9A0AD5C2273BB5E7009CC4FA /* ProfileView.swift in Sources */,
 				9A4354202753C0E0005E19C1 /* EditProfileView.swift in Sources */,
+				9ADC552D2754EEB100091AC9 /* CustomDatePicker.swift in Sources */,
 				9AE20CC3273AAA9A0043B760 /* ProfileHeaderView.swift in Sources */,
 				9AE7AF94273D61D0009DA31F /* ProfileSettingView.swift in Sources */,
 				9A28E715274BA43800B0746B /* AirplaneModel.swift in Sources */,

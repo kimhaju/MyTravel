@@ -8,9 +8,17 @@
 import SwiftUI
 
 struct MyCalendarView: View {
+    
+    @State var currnetDate: Date = Date()
+    
     var body: some View {
         //->여기에 데이트 피커
-        Text("calendar patch")
+        ScrollView{
+            VStack(spacing: 20){
+                CustomDatePicker(currentDate: $currnetDate)
+            }
+            
+        }
     }
 }
 
