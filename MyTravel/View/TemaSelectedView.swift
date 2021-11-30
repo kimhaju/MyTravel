@@ -45,11 +45,11 @@ struct SeasonTema: View {
             HStack(spacing: 20){
                 NavigationLink(
                     destination: TravelScrollView().environmentObject(homeModel)){
-                    Image("spring").resizable().aspectRatio(contentMode: .fill).frame(width: 200, height: 270).cornerRadius(12)
+                    Image("spring").resizable().aspectRatio(contentMode: .fill).frame(width: 200, height: 270).cornerRadius(12).overlay(ImageOver(word: "봄 시즌 할인 20%", color: "Pink"), alignment: .topLeading)
                 }.buttonStyle(PlainButtonStyle())
-                Image("summer").resizable().aspectRatio(contentMode: .fill).frame(width: 200, height: 270).cornerRadius(12)
-                Image("fall").resizable().aspectRatio(contentMode: .fill).frame(width: 200, height: 270).cornerRadius(12)
-                Image("winter").resizable().aspectRatio(contentMode: .fill).frame(width: 200, height: 270).cornerRadius(12)
+                Image("summer").resizable().aspectRatio(contentMode: .fill).frame(width: 200, height: 270).cornerRadius(12).overlay(ImageOver(word: "여름 시즌 할인 15%", color: "Purple"), alignment: .topLeading)
+                Image("fall").resizable().aspectRatio(contentMode: .fill).frame(width: 200, height: 270).cornerRadius(12).overlay(ImageOver(word: "가을 시즌 할인 20%", color: "Orange"), alignment: .topLeading)
+                Image("winter").resizable().aspectRatio(contentMode: .fill).frame(width: 200, height: 270).cornerRadius(12).overlay(ImageOver(word: "겨울 시즌 할인 10%", color: "Color"), alignment: .topLeading)
             }
         }.padding(.trailing,-20)
         .padding().foregroundColor(Color(UIColor.systemIndigo)).edgesIgnoringSafeArea(.bottom)
@@ -93,6 +93,20 @@ struct ImageOveraly: View {
         ZStack {
             Text(word).font(.system(size: 23)).fontWeight(.bold).padding(6).foregroundColor(.white)
         }.padding(6)
+    }
+}
+
+struct ImageOver: View {
+    @State var word = ""
+    @State var color = ""
+    
+    var body: some View {
+        ZStack {
+            Text(word).font(.callout).padding(6).foregroundColor(.white)
+        }.background(Color(color))
+        .opacity(0.8)
+        .cornerRadius(10.0)
+        .padding(6)
     }
 }
 

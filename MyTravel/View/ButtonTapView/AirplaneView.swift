@@ -14,23 +14,25 @@ struct AirplaneView: View {
     var body: some View {
         
         List(airplane) { item in
-            VStack{
-                HStack{
-                    Image(item.image).resizable().frame(width: 20, height: 20)
-                    Text(item.airplane).fontWeight(.bold)
-                    Text("출발지: \(item.starting)").font(.footnote)
+            
+            Image(item.image).resizable().frame(width: 30.0, height: 30.0).cornerRadius(10)
+            
+            HStack{
+                VStack(alignment: .leading){
+                    Text(item.airplane)
+                    Text("\(item.departure)~\(item.arrive)")
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
                 }
                 
-                HStack{
-                    VStack(spacing: 8){
-                        Text("시간: \(item.departure) ~ \(item.arrive)")
-                    }
-                    Text("운행 요일: \(item.week)")
+                VStack(alignment: .leading){
+                    Text("운행 요일: \(item.week)").foregroundColor(Color.gray).font(.system(size: 15))
+                    Text("출발지: \(item.starting)").foregroundColor(Color.gray).font(.system(size: 15))
                 }
             }
             
-        }.navigationTitle("국내 비행기 시간표")
-        
+        }
+        .navigationTitle("국내선 비행기")
     }
 }
 

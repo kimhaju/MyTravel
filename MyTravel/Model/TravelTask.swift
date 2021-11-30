@@ -34,32 +34,30 @@ var tasks: [TaskMetaData] = [
 
     TaskMetaData(task: [
     
-        TravelTask(title: "Talk to iJustine"),
-        TravelTask(title: "iPhone 13 Great Design Change😂"),
-        TravelTask(title: "Nothing Much Workout !!!")
+        TravelTask(title: "전주 패키지 예약")
     ], taskDate: getSampleDate(offset: 1)),
     TaskMetaData(task: [
         
-        TravelTask(title: "Talk to Jenna Ezarik")
+        TravelTask(title: "미향 호텔 예약")
     ], taskDate: getSampleDate(offset: -3)),
     TaskMetaData(task: [
         
-        TravelTask(title: "Meeting with Tim Cook")
+        TravelTask(title: "전주패키지 예약")
     ], taskDate: getSampleDate(offset: -8)),
     TaskMetaData(task: [
         
-        TravelTask(title: "Next Version of SwiftUI")
+        TravelTask(title: "자전거 여행 예약")
     ], taskDate: getSampleDate(offset: 10)),
     TaskMetaData(task: [
         
-        TravelTask(title: "Nothing Much Workout !!!")
+        TravelTask(title: "벚꽃 여행 패키지 예약")
     ], taskDate: getSampleDate(offset: -22)),
     TaskMetaData(task: [
         
-        TravelTask(title: "iPhone 13 Great Design Change😂")
+        TravelTask(title: "페이 호텔 예약")
     ], taskDate: getSampleDate(offset: 15)),
     TaskMetaData(task: [
         
-        TravelTask(title: "Kavsoft App Updates....")
+        TravelTask(title: "낙동강 자전거길 예약")
     ], taskDate: getSampleDate(offset: -20)),
 ]

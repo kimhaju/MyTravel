@@ -16,9 +16,9 @@ struct MyCalendarView: View {
         ScrollView{
             VStack(spacing: 20){
                 CustomDatePicker(currentDate: $currnetDate)
-            }
-            
+            }.padding(.vertical)
         }
+        
     }
 }
 

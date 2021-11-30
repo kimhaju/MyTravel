@@ -69,7 +69,7 @@ struct LocationViewModel: View {
                 Map(coordinateRegion: $locationManager.region, annotationItems: homeLocation) {
                     MapPin(coordinate: $0.coordinate)
                 }
-                .frame(height: 300)
+                .frame(maxWidth: .infinity)
                 
             }.introspectTabBarController { (UITabBarController) in
                 UITabBarController.tabBar.isHidden = true
